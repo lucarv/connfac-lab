@@ -1,6 +1,7 @@
 ## Azure IoT Cloud Workshops
+## Focused on Manufacturing
 
-Please see Lab 1
+
 
 
 
