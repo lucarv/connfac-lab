@@ -33,12 +33,17 @@ curl -L https://aka.ms/iotedged-linux-armhf-latest -o iotedge.deb && sudo dpkg -
 ### Run fix
 sudo apt install -f   
 
-At this point we are ready to connect the Edge Device to the Cloud. We need to provision the symmetric key to the device and for this lab we will do it manually by editing the Edge config file and pasting the Edge connection string we provisioned earlier in this lab: 
+At this point we are ready to connect the Edge Device to the Cloud. We need to provision the symmetric key to the device and for this lab we will do it manually by editing the Edge config file and pasting the Edge connection string we provisioned earlier in this lab:  
+`
 sudo nano /etc/iotedge/config.yaml  
-Once you have done it, reboot the security daemon by running the following command on the terminal:
-systemctl restart iotedge
+`
 
-At this point, you can verify that the Edge Device is ready to be further configured by adding modules and pipelines. As we have learnt, this is done by pushing a deployment manifest to the edge device. We will do that from the Portal.  
+Once you have done it, reboot the security daemon by running the following command on the terminal:  
+`
+systemctl restart iotedge
+`
+
+You can verify that the Edge Device is ready to be further configured by adding modules and pipelines. As we have learnt, this is done by pushing a deployment manifest to the edge device. We will do that from the Portal.  
 
 ![](images/manifestready.png )
 
@@ -50,12 +55,63 @@ Open the command prompt on the computer running your simulated device again. Con
 > sudo iotedge logs -f SimulatedTemperatureSensor
 
 ### Create a Stream Analytics job
-Instead of sending every single reading from the device, let's save connectivity costs by only send averages.  
+Instead of sending every single reading from the device, let's save connectivity costs by only send averages. We will also want to repeat the behaviour of the previous lab, where we will reset the device once the temperature reach a threshold. 
 First we need to create a container to store the jobs that will be sent to the edge. 
 
 ![](images/newcontainer.png )
 
 ### Create a new job
 
-In the Azure portal, go to Create a resource > Internet of Things > Stream Analytics Job. W have already done this once, the difference is that now we will choose "Edge" as Hosting environment. As before, we need to configure a source (input), a query and a sink (output). In the Edge case both input and output will be Edge Hub (for reasons that should be clear to us now).
+In the Azure portal, go to Create a resource > Internet of Things > Stream Analytics Job. W have already done this once, the difference is that now we will choose "Edge" as Hosting environment. As before, we need to configure a source (input), a query and a sink (output). In the Edge case both input and output will be Edge Hub (for reasons that should be clear to us now). For the query, we will replace the default quesry with the following query:
+```
+SELECT  
+    'reset' AS command 
+INTO 
+   alert 
+FROM 
+   temperature TIMESTAMP BY timeCreated 
+GROUP BY TumblingWindow(second,30) 
+HAVING Avg(machine.temperature) > 70
+```
+Save the job. We also need to store the job in the container we created above. Choose "Storage account settings" on the Configure Menu.
 
+### Deploy the job
+
+You are now ready to deploy the Azure Stream Analytics job on your IoT Edge device.
+
+In this section, you use the Set Modules wizard in the Azure portal to create a new deployment manifest. We have already deployed a temperature simulator. We will now add your Stream Analytics job. We will then create a pipeline that will connect these together and further to the cloud.
+
+1. In the Azure portal, in your IoT hub, go to IoT Edge, and then open the details page for your IoT Edge device.  Click on Set modules.
+
+![](images/setmod.png )
+
+2. Click Add and select Azure Stream Analytics Module.
+3. Select your subscription and the Azure Stream Analytics Edge job that you created.
+4. Select Save.
+5. Make a note of the name of your Stream Analytics module because you'll need it in the next step, then select Next to continue.
+6. Replace the default value in Routes with the following code. Update all three instances of {moduleName} with the name of your Azure Stream Analytics module.
+JSON 
+
+{
+    "routes": {
+        "telemetryToCloud": "FROM /messages/modules/SimulatedTemperatureSensor/* INTO $upstream",
+        "alertsToCloud": "FROM /messages/modules/{moduleName}/* INTO $upstream",
+        "alertsToReset": "FROM /messages/modules/{moduleName}/* INTO BrokeredEndpoint(\"/modules/SimulatedTemperatureSensor/inputs/control\")",
+        "telemetryToAsa": "FROM /messages/modules/SimulatedTemperatureSensor/* INTO BrokeredEndpoint(\"/modules/{moduleName}/inputs/temperature\")"
+    }
+}
+
+
+{
+  "routes": {
+    "telemetryToCloud": "FROM /messages/modules/SimulatedTemperatureSensor/* INTO $upstream",
+    "alertsToCloud": "FROM /messages/modules/IotEdgeJob/* INTO $upstream",
+    "alertsToReset": "FROM /messages/modules/IotEdgeJob/* INTO BrokeredEndpoint(\"/modules/SimulatedTemperatureSensor/inputs/control\")",
+    "telemetryToAsa": "FROM /messages/modules/SimulatedTemperatureSensor/* INTO BrokeredEndpoint(\"/modules/IotEdgeJob/inputs/temperature\")"
+  }
+}
+
+7. The routes that you declare here define the flow of data through the IoT Edge device. The telemetry data from the SimulatedTemperatureSensor module are sent to IoT Hub and to the temperature input that was configured in the Stream Analytics job. The alert output messages are sent to IoT Hub and to the tempSensor module to trigger the reset command.
+8. Select Next.
+9. In the Review Deployment step, select Submit.
+10. Return to the device details page, and then select Refresh.
