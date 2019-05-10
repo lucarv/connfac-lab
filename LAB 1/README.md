@@ -29,7 +29,7 @@ On the left pane choose Resource Groups.
 Go back to your Resource group and verify that the IoT Hub there
 
 Now we will add a few consumer groups, which we will need later. On the IoT Hub blade, select Built-in endpoints and create two consumer groups, call one asa and another timeseries.
-![](images/consumergroups.png)
+![](images/consumergrps.png)
 
 
 ### Create Blob storage
