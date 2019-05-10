@@ -113,4 +113,9 @@ In this section, you use the Set Modules wizard in the Azure portal to create a 
 8. Select Next.
 9. In the Review Deployment step, select Submit.
 10.  Return to the device details page, and then select Refresh. Check that all modules are up and running  
+11. Monitor the messages being sent from the SimultaedTemperatureSensor module
+> sudo iotedge logs -f SimulatedTemperatureSensor  
+12. Verify that after the temperature reaches the threshold, the Sensor is reset
 
+
+![](images/asa.png )
