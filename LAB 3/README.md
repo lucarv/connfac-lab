@@ -3,7 +3,8 @@ For this lab we will implement move into opc-ua territory. We will add an OPC-UA
 
 ![](images/arch.png )
 
-We will need to create an new deployment manifest that includes the opc-ua publisher. This module is stored on the microsoft reporitory at mcr.microsoft.com/iotedge/opc-publisher:linux-arm32v7
+We will need to create an new deployment manifest that includes the opc-ua publisher. 
+
 This module needs to read a config file that contains information about the OPC-UA servers and nodes that it should connect too. We will need to store this configuration file on the edge device and subsequently mount it so it is available for the module. Let's do that first.
 
 1. SSH into the raspberry pi
@@ -13,7 +14,7 @@ This module needs to read a config file that contains information about the OPC-
 > cd iotedge  
 > nano pn.json
 ```
-3. Insert the following lines in the pn.json file
+3. Insert the following lines in the pn.json file, save and exit nano.
 ```
 [
   {
@@ -36,3 +37,28 @@ This module needs to read a config file that contains information about the OPC-
   }
 ]
 ```
+
+Go back to the Portal and add a new module for the opc-ua publisher (like we did for the simulated temperature sensor). Let's name it **publisher**.
+This module is stored on the microsoft reporitory at mcr.microsoft.com/iotedge/opc-publisher:linux-arm32v7. 
+We need to mount the directory we created before, so in the Container Created Options, enter the following:
+```
+{
+  "Hostname": "publisher",
+  "Cmd": [
+    "--pf=./pn.json",
+    "--aa"
+  ],
+  "HostConfig": {
+    "Binds": [
+      "/home/pi/iotedge:/appdata"
+    ]
+  }
+}
+```  
+
+Add a route so the publisher sends data to the IoT Hub. You should be able to figure out what to add in the "Specify Routes" tab...  
+
+Push the manifest to the edge device
+
+
+
