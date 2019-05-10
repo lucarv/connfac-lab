@@ -8,6 +8,6 @@ This module needs to read a config file that contains information about the OPC-
 
 1. SSH into the raspberry pi
 2. Create a folder called iotedge with a file called pn.json
-> mkdir iotedge
-> cd iotedge
+> mkdir iotedge  
+> cd iotedge  
 > nano pn.json
