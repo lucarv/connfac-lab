@@ -43,7 +43,15 @@ Once you have done it, reboot the security daemon by running the following comma
 systemctl restart iotedge
 `
 
-You can verify that the Edge Device is ready to be further configured by adding modules and pipelines. As we have learnt, this is done by pushing a deployment manifest to the edge device. We will do that from the Portal.  
+You can verify that the Edge Device is ready to be further configured by means of a deployment manifest. A manifest is a json document containing modules and pipelines.
+Modules can be downloaded from any docker repository, and some of them are available at the Edge Market place on the Azure Portal. We will fetch a module that will simulate a device sending telemetry.  
+
+To deploy your first module from the Azure Marketplace, use the following steps:
+1. In the Azure portal, enter Simulated Temperature Sensor into the search and open the Marketplace result.
+2. Choose an IoT Edge device to receive this module. On the Target Devices for IoT Edge Module page, provide the appropriate info. Select "Create". This will take you back to the device pane on the portal, it will show the module in the list of deployment modules.
+3. We will only deploy one module now, so press "Next" to configure the pipeline. 
+4. For now, you want all messages from all modules to go to IoT Hub ($upstream). It's  autopopulated, just select "Next"
+5. The next pane will show you the deployment manifest. Take a minute to inspect the JSON file. Then press "Submit"
 
 ![](images/manifestready.png )
 
