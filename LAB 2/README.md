@@ -68,7 +68,8 @@ First we need to create a container to store the jobs that will be sent to the e
 
 ### Create a new job
 
-In the Azure portal, go to Create a resource > Internet of Things > Stream Analytics Job. W have already done this once, the difference is that now we will choose "Edge" as Hosting environment. As before, we need to configure a source (input), a query and a sink (output). In the Edge case both input and output will be Edge Hub (for reasons that should be clear to us now). For the query, we will replace the default quesry with the following query:
+In the Azure portal, go to Create a resource > Internet of Things > Stream Analytics Job. W have already done this once, the difference is that now we will choose "Edge" as Hosting environment. As before, we need to configure an input, a query and an output. In the Edge case both input and output will be Edge Hub (for reasons that should be clear to us now). Note that the name of your input and output are important, as they need to match the entry points in your modules.
+For the query, we will replace the default quesry with the following query:
 ```
 SELECT  
     'reset' AS command 
@@ -100,7 +101,6 @@ In this section, you use the Set Modules wizard in the Azure portal to create a 
 ``` 
 {
     "routes": {
-        "telemetryToCloud": "FROM /messages/modules/SimulatedTemperatureSensor/* INTO $upstream",
         "alertsToCloud": "FROM /messages/modules/{moduleName}/* INTO $upstream",
         "alertsToReset": "FROM /messages/modules/{moduleName}/* INTO BrokeredEndpoint(\"/modules/SimulatedTemperatureSensor/inputs/control\")",
         "telemetryToAsa": "FROM /messages/modules/SimulatedTemperatureSensor/* INTO BrokeredEndpoint(\"/modules/{moduleName}/inputs/temperature\")"
@@ -108,16 +108,9 @@ In this section, you use the Set Modules wizard in the Azure portal to create a 
 }
 ```
 
-{
-  "routes": {
-    "telemetryToCloud": "FROM /messages/modules/SimulatedTemperatureSensor/* INTO $upstream",
-    "alertsToCloud": "FROM /messages/modules/IotEdgeJob/* INTO $upstream",
-    "alertsToReset": "FROM /messages/modules/IotEdgeJob/* INTO BrokeredEndpoint(\"/modules/SimulatedTemperatureSensor/inputs/control\")",
-    "telemetryToAsa": "FROM /messages/modules/SimulatedTemperatureSensor/* INTO BrokeredEndpoint(\"/modules/IotEdgeJob/inputs/temperature\")"
-  }
-}
 
-1. The routes that you declare here define the flow of data through the IoT Edge device. The telemetry data from the SimulatedTemperatureSensor module are sent to IoT Hub and to the temperature input that was configured in the Stream Analytics job. The alert output messages are sent to IoT Hub and to the tempSensor module to trigger the reset command.
-2. Select Next.
-3. In the Review Deployment step, select Submit.
-4.  Return to the device details page, and then select Refresh.
+7. The routes that you declare here define the flow of data through the IoT Edge device. The telemetry data from the SimulatedTemperatureSensor module are sent to IoT Hub and to the temperature input that was configured in the Stream Analytics job. The alert output messages are sent to IoT Hub and to the tempSensor module to trigger the reset command.
+8. Select Next.
+9. In the Review Deployment step, select Submit.
+10.  Return to the device details page, and then select Refresh. Check that all modules are up and running  
+
