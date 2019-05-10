@@ -37,9 +37,10 @@ Now we will add a few consumer groups, which we will need later. On the IoT Hub 
 2. Search for Storage Account and then click “Create”
 3. Select the subscription, Resource Group and Region
 4. Give it a unique name. A Storage Account is fully addressable from the public internet!!!
-5. Leave everything else with default settings
-6. Press “Review + create“
-7. Verify the settings and press “Create“
+5. Choose the asa consumer group we created on the Iot Hub.
+6. Leave everything else with default settings
+7. Press “Review + create“
+8. Verify the settings and press “Create“
    
 Go back to your Resource group and vselect the Storage account
 1. On the landing blade, Select Blobs
