@@ -81,11 +81,13 @@ Use npm to create a Node.js solution template that you can build on top of.
 
 1. In Visual Studio Code, select View > Integrated Terminal to open the VS Code integrated terminal.
 2. In the integrated terminal, enter the following command to install yeoman and the generator for Node.js Azure IoT Edge module:
+```
 > npm install -g yo generator-azure-iot-edge-module
+```
 
-3. Select View > Command Palette to open the VS Code command palette.
-4. In the command palette, type and run the command Azure: Sign in and follow the instructions to sign in your Azure account. If you've already signed in, you can skip this step.
-5. In the command palette, type and run the command Azure 
+4. Select View > Command Palette to open the VS Code command palette.
+5. In the command palette, type and run the command _Azure: Sign in_ and follow the instructions to sign in your Azure account. If you've already signed in, you can skip this step.
+6. In the command palette, type and run the command _Azure IoT Edge: New IoT Edge solution_ Follow the prompts in the command palette to create your solution
    
 ## Add your registry credentials
 
