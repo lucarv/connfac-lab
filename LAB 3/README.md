@@ -23,13 +23,13 @@ This module needs to read a config file that contains information about the OPC-
     "OpcNodes": [
       {
         "Id": "ns=1;s=020",
-        "OpcSamplingInterval": 2000,
+        "OpcSamplingInterval": 1000,
         "OpcPublishingInterval": 5000,
         "DisplayName": "Current time"
       },
       {
         "Id": "ns=1;s=050",
-        "OpcSamplingInterval": 2000,
+        "OpcSamplingInterval": 1000,
         "OpcPublishingInterval": 5000,
         "DisplayName": "Current time"
       }
@@ -61,5 +61,4 @@ Add a route so the publisher sends data to the IoT Hub. You should be able to fi
 Push the manifest to the edge device. This module is quite big, so it might take a while before it is ready. Keep checking your device on the Portal (or on the edge, by issuing the _iotedge list_ command), when it is ready, you should be able to see telemetry from the OPC-UA Server coming into the IoT Hub
 
 ![](images/devexplorer.png )
-
 

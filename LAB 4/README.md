@@ -18,6 +18,3 @@ Let's create a Time Series Insights , which is a tool that is very much apprecia
 
 ![](images/tsi2.png )
 
-
-
-
