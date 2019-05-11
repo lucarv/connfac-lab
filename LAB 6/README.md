@@ -101,7 +101,7 @@ The environment file stores the credentials for your container repository and sh
 
 Currently, Visual Studio Code can develop Node.js modules for Linux AMD64 and Linux ARM32v7 devices. You need to select which architecture you're targeting with each solution, because the container is built and run differently for each architecture type. 
 
-1. Open the command palette and search for Azure IoT Edge: Set Default Target Platform for Edge Solution, or select the shortcut icon in the side bar at the bottom of the window.
+1. Open the command palette and search for _Azure IoT Edge: Set Default Target Platform for Edge Solution_, or select the shortcut icon in the side bar at the bottom of the window.
 2. In the command palette, select the target architecture from the list of options. For this tutorial, we're using a raspberry pi as the IoT Edge device, so will use ARM32v7 as our target platform.
 
 ## Update the module with custom code
@@ -112,9 +112,7 @@ Each template comes with sample code included, which takes simulated sensor data
 2. Replace the entire _PipeMessage_ function with a _FormatMessage_ function.
 3. Below is a skeleton for the code You will need to create:
 ```
-// This function filters out messages that report temperatures below the temperature threshold.
-// It also adds the MessageType property to the message with the value set to Alert.
-function filterMessage(client, inputName, msg) {
+function formatMessage(client, inputName, msg) {
     client.complete(msg, printResultFor('Receiving message'));
     if (inputName === 'input1') {
         // the array containing the array with PLC readings is your msg variable
@@ -146,7 +144,9 @@ Now you need to build the solution as a container image and push it to your cont
 
 1. Open the VS Code integrated terminal by selecting View > Terminal.
 2. Sign in to Docker by entering the following command in the terminal. Sign in with the username, password, and login server from your Azure container registry. You can retrieve these values from the Access keys section of your registry in the Azure portal.
+```
 > docker login -u <ACR username> -p <ACR password> <ACR login server>
+```
 4. Right click on the Docker.arm32v7 file on the left pane on VS. 
 5. Choose build
 6. Name your module as <MYACR>.azurecr.io/formatter:0.0.1
@@ -159,3 +159,6 @@ Remember that modules are not **PUSHED** to the edge device. The Edge device **P
 
 ![](images/config-registry.png )
 
+## View generated data
+
+You can view the status of your IoT Edge device using the Azure IoT Hub Devices section of the Visual Studio Code explorer. Expand the details of your device to see a list of deployed and running modules.
