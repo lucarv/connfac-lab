@@ -1,7 +1,7 @@
 ﻿# LAB 2 - Lambda Architecture
 For this lab we will attach a stream processor that will subscribe to the telemetry from IoT Hub. It will observe the event flow.
 
-![](images/Architecture.png)
+![](images/lambda.png)
 
 ### Create Stream Analytics Job
 
