@@ -40,11 +40,11 @@ Now we will add a few consumer groups, which we will need later. On the IoT Hub 
 We are taken into a pane that shows the json document. Inspect it and locate the desired properties section
 8. This document is fully editable from the portal, so let's start the device telemetry by selecting its telemetry state to true and choosing a sampling interval. Add the following json to the twin document, right at the beginning of the desired properties section
 ```
-    "desired": {
-      "telemetry": {
-        "status": true,
-        "interval": 3000
-    },
+"desired": {
+    "telemetry": {
+    "status": true,
+    "interval": 3000
+},
 ```
 ![](images/twin-edited.png)
 
