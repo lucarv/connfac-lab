@@ -26,6 +26,21 @@ Now we will add a few consumer groups, which we will need later. On the IoT Hub 
 
 ![](images/consumergrps.png)
 
+### Provision and start sending telemetry from a simulated device
+1. Go to IoT Hub and click IoT Devices on the left panel (blade)
+2. On the IoT Devices page click **"+ Add"** and give the IoT device a name e.g. **Simulator**
+3. After you created a new device click refresh on the IoT Device page until the new device appears.
+4. Select the device and copy the Connection string (primary key) you will need this to run the **Device Simulator** app. Follow the [Device simulator guide](https://github.com/lucarv/connfacc-hol/tree/master/Device_Simulator) up to bullet 5.
+5. Verify the invocation of a direct method. Select your device in the portal. Verify that the device resets and the temperature starts from 25C again.
+![](images/InvokeReset.png)
+
+### Run solution and verify data
+Start the solution and verify that the simulator is sending messages to
+1. IoT Hub: Look on the IoT Hub Overview page and see “Usage” (Hit refresh and verify that the messages count is increased)
+2. Stream Analytics Job: Look on the Stream Analytics Overview page and see “Monitoring” there should be events coming in
+3. Under your storage account go to Blobs, select your container, drill down to the lowest level of the folder structure and verify that files were created
+4. Stop the Device Simulator (Ctrl+C on terminal)
+5. Stop the Stream Analytics job
 
 ### Create Blob storage
 1. Select your Resource group and then click the "+ Add" button to add a Storage Account
@@ -58,21 +73,7 @@ Go back to your Resource group and vselect the Storage account
 13. Press Save.
 14. Start the Stream Analytics job from the Stream Analytics Overview page
 
-### Provision and start sending telemetry from a simulated device
-1. Go to IoT Hub and click IoT Devices on the left panel (blade)
-2. On the IoT Devices page click **"+ Add"** and give the IoT device a name e.g. **Simulator**
-3. After you created a new device click refresh on the IoT Device page until the new device appears.
-4. Select the device and copy the Connection string (primary key) you will need this to run the **Device Simulator** app. Follow the [Device simulator guide](https://github.com/lucarv/connfacc-hol/tree/master/Device_Simulator) up to bullet 5.
-5. Verify the invocation of a direct method. Select your device in the portal. Verify that the device resets and the temperature starts from 25C again.
-![](images/InvokeReset.png)
 
-### Run solution and verify data
-Start the solution and verify that the simulator is sending messages to
-1. IoT Hub: Look on the IoT Hub Overview page and see “Usage” (Hit refresh and verify that the messages count is increased)
-2. Stream Analytics Job: Look on the Stream Analytics Overview page and see “Monitoring” there should be events coming in
-3. Under your storage account go to Blobs, select your container, drill down to the lowest level of the folder structure and verify that files were created
-4. Stop the Device Simulator (Ctrl+C on terminal)
-5. Stop the Stream Analytics job
 
 ### Create an Azure Function App
 

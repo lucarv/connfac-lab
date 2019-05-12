@@ -1,7 +1,7 @@
-## Azure IoT Cloud Workshops
+# Azure IoT Cloud Workshops
 ## Focused on Manufacturing
 
-
+## Pre-requisites
 
 
 
