@@ -33,11 +33,10 @@ Now we will add a few consumer groups, which we will need later. On the IoT Hub 
 4. Select the device and save the Connection string (primary key) you will need this to run the **Device Simulator** app. 
 5. Follow the [Device simulator guide](https://github.com/lucarv/connfacc-hol/tree/master/Device_Simulator) 
 6. Verify, as expected, that once the device connects, it immediatelly receives the desired properties of the device twin document. As we have not set any properties yet, all we see is the version number of the document.
-7. Let's now inspect the device twin document using the Portal
-
+7. Let's now inspect the device twin document using the Portal  
+We are taken into a pane that shows the json document. Inspect it and locate the desired properties section  
 ![](images/select-twin.png)
 
-We are taken into a pane that shows the json document. Inspect it and locate the desired properties section
 8. This document is fully editable from the portal, so let's start the device telemetry by selecting its telemetry state to true and choosing a sampling interval. Add the following json to the twin document, right at the beginning of the desired properties section
 ```
 "desired": {
