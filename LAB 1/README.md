@@ -1,9 +1,5 @@
 ﻿# LAB 1 - Azure IoT Platform
-For this lab we will use a device simulator to send "Temperature" measurements to an IoT Hub, save the messages to blob storage and report back to the device via an Azure Function if the “Temperature becomes too hot.
-
-![](images/Architecture.png )
-
-You will create the architecture by following a step-by-step guide (this document)
+For this lab we will work a lot with IoT Hub. We will explore most of its functions using a device simulator.
 
 ## Step-by-step guide
 Sign in to <http://portal.azure.com>
