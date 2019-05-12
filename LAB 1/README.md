@@ -73,8 +73,8 @@ One very common requirement in Iot projects is to store all incoming data for la
 
 ![](images/create-container.png)
 
-1. On the landing blade, Select Blobs
-2. Create a Container by Pressing the appropriate Button. Give it a name and select "Container" as Public Access level
+10. On the landing blade, Select Blobs
+11. Create a Container by Pressing the appropriate Button. Give it a name and select "Container" as Public Access level
 
 ![](images/storage-complete.png)
 
