@@ -2,33 +2,13 @@
 
 How to run this sample:
 
-1. Make sure you have an IoT Hub with a device created, copy the connection string for the device and replace below `[yourdeviceconnectionstring]`.
-2. Open a console and navigate to this folder.
-3. Type `dotnet restore` to restore the packages.
-4. Type `dotnet run [yourdeviceconnectionstring]` to build and run the console app.
-5. You will see messages sent to IoT Hub.
-6. There is a Device Twin, Desired Property used: Interval. You can set a new interval to send telemetry by updating the Desired Property like this on your favorite tool (the portal, Device Explorer, etc):
-````
-"properties": {
-    "desired": {
-      "Interval" : 3000,
-      "$metadata": {
-        "$lastUpdated": "2018-02-08T09:57:34.1979575Z"
-      },
-      "$version": 1
-    },
-    "reported": {
-      "$metadata": {
-        "$lastUpdated": "2018-02-08T09:57:34.1979575Z"
-      },
-      "$version": 1
-    }
-  }
-````
-
-Optionally implement a direct method.
-
-> Note: this is for dev only sample. 
-
-
-
+1. create a folder in yout laptop called devicesim and change dir to it
+2. copy index.js and package json from [here](https://github.com/lucarv/connfac-lab/tree/master/Device_Simulator/node) into your devicesim folder
+3. install dependencies
+```
+> npm install
+```
+4. run the sample
+```
+> node index
+```
