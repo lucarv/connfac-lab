@@ -13,8 +13,6 @@ On the left pane choose Resource Groups.
 1. Click the "+ Add" button to create a new Resource group, or in case a Resource Group has been assigned, choose it.
 2. Give the Resource group a name and choose North Europe as region
 
-![](images/Create_resourcegroup.PNG)
-
 ### Create IoT Hub
 (You might need to the refresh icon in Azure to see your new Resource group)
 1. Select your Resource group and then click the "+ Add" button to add an IoT hub
@@ -28,7 +26,8 @@ On the left pane choose Resource Groups.
  
 Go back to your Resource group and verify that the IoT Hub there
 
-Now we will add a few consumer groups, which we will need later. On the IoT Hub blade, select Built-in endpoints and create two consumer groups, call one asa and another timeseries.
+Now we will add a few consumer groups, which we will need later. On the IoT Hub blade, select Built-in endpoints and create two consumer groups, call one asa and another timeseries.  
+
 ![](images/consumergrps.png)
 
 
