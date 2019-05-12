@@ -3,7 +3,7 @@
 How to run this sample:
 
 1. create a folder in yout laptop called devicesim and change dir to it
-2. copy index.js and package json from [here](https://github.com/lucarv/connfac-lab/tree/master/Device_Simulator/node) into your devicesim folder
+2. csave and extra this archive [here](https://github.com/lucarv/connfac-lab/blob/master/Device_Simulator/node/Archive.zip) into your devicesim folder
 3. install dependencies
 ```
 > npm install
