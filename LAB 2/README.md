@@ -22,13 +22,24 @@ SELECT
 FROM 
     [<YOUR IOTHUB ALIAS>]
 ```    
-
 12. Let's observe the stream before we create a query. Right click on the input name and choose "Sample data from input". Accept all parameters, an press "ok".
 
 ![](images/observe.png )
 
 13. After about 3 minutes when the stream analytics engine samples the data on the IoT Hub, a little icon appears next to the input name. Press 'Test'. Look at the results.
-14. Leave it for now.
+14. In the previous lab, we had a route from IoT Hub to Blob that we disabled. If you go back to the Portal and re-enable it, You will notice that no messages reach Stream Analytics. One way of still keeping the pattern is to have Stream Analytics do the routing instead So let's do that.
+15. Click the “Add Stream Output" button, select Blob Storage and setup it so telemetry is stored in the container we created in Lab 1. 
+16. Edit the Query as to select telemetry INTO the container
+```sql
+SELECT *
+INTO
+    [<YOUR BLOB ALIAS>]
+FROM 
+    [<YOUR IOTHUB ALIAS>]
+```    
+17. Save the work and start the job from trhe overview pane on the Stream Analytics Job page. 
+18. Verify that telemetry is again stored in the container.  
+
 
 ### Create an Azure Function App
 

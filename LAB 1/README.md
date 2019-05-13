@@ -99,3 +99,5 @@ on the Rouying query field. Press "Save".
 6. Once the route is activated, you may notice that the telemetry is no longer showing. Can You think of the reason for that?
 7. Wait a little and verify that the blob has now telemetry stored.
 
+One drawback from using message routing in IoT Hub is that once a rule is matched, the telemetry is removed from the queue and can't be consumed by other applications. There are ways around this but for now let's just disable the route on the Portal. 
+
