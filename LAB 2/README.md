@@ -69,9 +69,10 @@ Go back to your Resource group and Create a Function App.
 
 ### Update your Stream Analytics job
 
-1. Add an Output to your Stream Analytics job to stream data into your Function, the input type should be _Azure function_
-2. Give it an alias, select your function accordingly
-3. Update your Stream Analytics query so add the statemet below to the existing query
+1. First thing we must do is to stop the ongoing job. 
+2. Add an Output to your Stream Analytics job to stream data into your Function, the input type should be _Azure function_
+3. Give it an alias, select your function accordingly
+4. Update your Stream Analytics query so add the statemet below to the existing query
 ```sql
 SELECT 
     IoTHub.ConnectionDeviceId DeviceId
@@ -79,11 +80,13 @@ INTO
     [functionOutput]
 FROM 
     [<YOUR IOTHUB ALIAS>]
-WHERE Sensor.Temperature > 30.0
+WHERE Sensor.Temperature > 70.0
 ```
-4. Start the Stream Analytics job (wait with next step until it is started)
-5. Run the Device Simulator
-6. Verify that when “Temperature” reaches 30+ degrees, the reset function is invoked on the device and then telemetry restarts at 25 degrees
+4. Save your query.
+5. Use the direct methiod we created in Lab 1 to reset the device.
+6. Start the Stream Analytics job (wait with next step until it is started)
+7. Run the Device Simulator
+8. Verify that when “Temperature” reaches 7 0+ degrees, the reset function is invoked on the device and then telemetry restarts at 25 degrees
 
 ## Bonus Task
 

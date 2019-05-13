@@ -15,7 +15,7 @@ public static async Task<HttpResponseMessage> Run(HttpRequestMessage req, TraceW
         log.Info($"Payload: {jsonContent}");
         var messageItem = JsonConvert.DeserializeObject<Sensor[]>(jsonContent);
 
-        var connectionString = GetEnvironmentVariable("Azure_IoT_ConnectionString");
+        var connectionString = "<YOUR IOT HUB SERVICE CONECTION STRING>";
         // create IoT Hub connection.
         var serviceClient = ServiceClient.CreateFromConnectionString(connectionString, Microsoft.Azure.Devices.TransportType.Amqp);
         var methodInvocation = new CloudToDeviceMethod("Off") { ResponseTimeout = TimeSpan.FromSeconds(10) };
