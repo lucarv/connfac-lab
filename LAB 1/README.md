@@ -31,7 +31,7 @@ Now we will add a few consumer groups, which we will need later. On the IoT Hub 
 2. On the IoT Devices page click **"+ Add"** and give the IoT device a name e.g. **Simulator**
 3. After you created a new device click refresh on the IoT Device page until the new device appears.
 4. Select the device and save the Connection string (primary key) you will need this to run the **Device Simulator** app. 
-5. Follow the [Device simulator guide](https://github.com/lucarv/connfacc-hol/tree/master/Device_Simulator) 
+5. Follow the [Device simulator guide](https://github.com/lucarv/aziot_devsim). Make sure you install the simulator on the raspberry pi
 6. Verify, as expected, that once the device connects, it immediatelly receives the desired properties of the device twin document. As we have not set any properties yet, all we see is the version number of the document.
 7. Let's now inspect the device twin document using the Portal  
 We are taken into a pane that shows the json document. Inspect it and locate the desired properties section  
@@ -79,7 +79,6 @@ One very common requirement in Iot projects is to store all incoming data for la
 ![](images/storage-complete.png)
 
 ### Create a route to storage
-
 IoT Hub works by declarative routing, and so far we have used the default route. We will now create a new route to send telemetry from sensors to the cold storage.
 
 1. Go back to your IoT Hub
@@ -88,3 +87,7 @@ IoT Hub works by declarative routing, and so far we have used the default route.
 4. Enter the Routes tab and press "+ Add". Give your route a name, select your blob as endpoint. On the query, let's route only if a device is of type sensor. This info is sent by the device simulator as a header. Write deviceType = 'sensor' on the Rouying query field. Press "Save".
 5. Once the route is activated, you may notice that the telemetry is no longer showing. Can You think of the reason for that?
 6. Wait a little and verify that the blob has now telemetry stored.
+
+
+## Create a Service Application
+
