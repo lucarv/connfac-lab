@@ -48,13 +48,20 @@ We are taken into a pane that shows the json document. Inspect it and locate the
 
 9.  Press "Save" to send the property to the device. 
 10. Verify the telemetry arriving at IoT Hub. Look on the IoT Hub Overview page and see “Usage” (Hit refresh and verify that the messages count is increased)
-11. You can toggle the telemetry by setting the desired property _telemetry.status_ to false. Try that now.
-12. Start the telemetry again by setting the status to true on the twin document
+11. You can toggle the telemetry on and off by setting the desired property _telemetry.status_ to true/false. Try that now. 
     
 ## Invoke a direct method
 1. Verify the invocation of a direct method. Select your device in the portal. Verify that the device resets and the temperature starts from 25C again.
  
 ![](images/InvokeReset.png)
+
+## Visual Studio Code
+
+If you have not yet done it, now is a good time to install Visual Studio Code and the Azure IoT Hub Tool extension. Once You have done that, right click on the extension and select your IoT Hub. You can do that by clicking on the elipsis (the periods) next to the extension on VS Code.
+
+![](images/vsc1.png)
+
+Once that is done, the extension will show your devices. Right click on your device and select "Start Monitoring D2C Message". See your messages appear in the lower tab of VS Code
 
 ## Save telemetry to cold storage for archival purposes
 
@@ -83,8 +90,9 @@ IoT Hub works by declarative routing, and so far we have used the default route.
 2. Select "Message Routing". Choose the "Custom endpoints" tab.
 3. Create a new Custom endpoint. Press "+ Add" and choose Blob Storage from the drop down menu. Give the end point a name and pick the container we have created. Select "Create"
 4. Enter the Routes tab and press "+ Add". Give your route a name, select your blob as endpoint. On the query, let's route only if a device is of type sensor. This info is sent by the device simulator as a header. Write deviceType = 'sensor' on the Rouying query field. Press "Save".
-5. Once the route is activated, you may notice that the telemetry is no longer showing. Can You think of the reason for that?
-6. Wait a little and verify that the blob has now telemetry stored.
+5.  Start the telemetry again by setting the status to true on the twin document
+6. Once the route is activated, you may notice that the telemetry is no longer showing. Can You think of the reason for that?
+7. Wait a little and verify that the blob has now telemetry stored.
 
 
 ## Create a Service Application
