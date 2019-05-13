@@ -20,7 +20,7 @@ For this lab we will attach a stream processor that will subscribe to the teleme
 SELECT 
     *
 FROM 
-    [iothub]
+    [<YOUR IOTHUB ALIAS>]
 ```    
 
 12. Let's observe the stream before we create a query. Right click on the input name and choose "Sample data from input". Accept all parameters, an press "ok".
