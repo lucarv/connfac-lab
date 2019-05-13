@@ -48,10 +48,9 @@ Go back to your Resource group and Create a Function App.
 1. Give it a unique name, it is fully addressable from the public internet!!!
 2. Select the Subscription, Resource Group and Region. Leave all other settings to default values.
 3. Select your newly created app. Expand the menu (Press the "+" next to the menu item "Functions"), select Quickstart and create an In-portal function. Select "more templates" then choose "HTTP Trigger". Give it a name.
-4. In the Function App run.csx file copy/paste the following code instead of the default code
-5. On the run.csx window, replace all code with [this](https://github.com/lucarv/connfacc-hol/tree/master/Device_Simulator)
-6. Under your Function go to View Files, add a file called function.proj
-7. Copy the content below to the function.proj file
+4. In the Function App run.csx file replace the default code with the code found [here](https://github.com/lucarv/connfac-lab/blob/master/LAB%202/function/run.csx)
+5. Under your Function go to View Files, add a file called function.proj
+6. Copy the content below to the function.proj file
 
 ```json
 <Project Sdk="Microsoft.NET.Sdk">
