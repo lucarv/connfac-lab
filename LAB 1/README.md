@@ -76,12 +76,12 @@ One very common requirement in Iot projects is to store all incoming data for la
 8. Verify the settings and press “Create“
 9. When the resource is created, go to it
 
-![](images/create-container.png)
+![](images/storage-complete.png)
 
 10. On the landing blade, Select Blobs
 11. Create a Container by Pressing the appropriate Button. Give it a name and select "Container" as Public Access level
 
-![](images/storage-complete.png)
+![](images/create-container.png)
 
 ### Create a route to storage
 IoT Hub works by declarative routing, and so far we have used the default route. We will now create a new route to send telemetry from sensors to the cold storage.
