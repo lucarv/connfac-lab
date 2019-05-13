@@ -99,6 +99,3 @@ on the Rouying query field. Press "Save".
 6. Once the route is activated, you may notice that the telemetry is no longer showing. Can You think of the reason for that?
 7. Wait a little and verify that the blob has now telemetry stored.
 
-
-## Create a Service Application
-
