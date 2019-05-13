@@ -1,10 +1,9 @@
-# LAB 3 - Azure Industrial IoT
+# LAB 4 - Azure Industrial IoT
 For this lab we will implement move into opc-ua territory. We will add an OPC-UA publisher to the EDGE device, subscribe to a few nodes and publish the node values to the IoT Hub.
 
 ![](images/arch.png )
 
-We will need to create an new deployment manifest that includes the opc-ua publisher. 
-
+We will need to create an new deployment manifest that includes the opc-ua publisher.  
 This module needs to read a config file that contains information about the OPC-UA servers and nodes that it should connect too. We will need to store this configuration file on the edge device and subsequently mount it so it is available for the module. Let's do that first.
 
 1. SSH into the raspberry pi

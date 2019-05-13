@@ -109,7 +109,6 @@ In this section, you use the Set Modules wizard in the Azure portal to create a 
 }
 ```
 
-
 7. The routes that you declare here define the flow of data through the IoT Edge device. The telemetry data from the SimulatedTemperatureSensor module are sent to IoT Hub and to the temperature input that was configured in the Stream Analytics job. The alert output messages are sent to IoT Hub and to the tempSensor module to trigger the reset command.
 8. Select Next.
 9. In the Review Deployment step, select Submit.

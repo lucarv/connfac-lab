@@ -73,7 +73,10 @@ FROM
 WHERE Sensor.Temperature > 30.0
 ```
 
-
 4. Start the Stream Analytics job (wait with next step until it is started)
 5. Run the Device Simulator
 6. Verify that when “Temperature” reaches 30+ degrees, the reset function is invoked on the device and then telemetry restarts at 25 degrees
+
+## Bonus Task
+
+If You and your team has managed to conclude this lab with time to spare, You can try modify the query in stream analytics to add an output to Power BI and create a live dashboard for your solution.
