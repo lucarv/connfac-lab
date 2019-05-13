@@ -76,4 +76,4 @@ WHERE Sensor.Temperature > 30.0
 
 4. Start the Stream Analytics job (wait with next step until it is started)
 5. Run the Device Simulator
-6. Verify that the “Temperature” reaches 30+ degrees, then stops for 10 seconds and then restarts at 25 degrees
+6. Verify that when “Temperature” reaches 30+ degrees, the reset function is invoked on the device and then telemetry restarts at 25 degrees
