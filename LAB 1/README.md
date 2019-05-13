@@ -89,7 +89,12 @@ IoT Hub works by declarative routing, and so far we have used the default route.
 1. Go back to your IoT Hub
 2. Select "Message Routing". Choose the "Custom endpoints" tab.
 3. Create a new Custom endpoint. Press "+ Add" and choose Blob Storage from the drop down menu. Give the end point a name and pick the container we have created. Select "Create"
-4. Enter the Routes tab and press "+ Add". Give your route a name, select your blob as endpoint. On the query, let's route only if a device is of type sensor. This info is sent by the device simulator as a header. Write deviceType = 'sensor' on the Rouying query field. Press "Save".
+4. Enter the Routes tab and press "+ Add". Give your route a name, select your blob as endpoint. On the query, let's route only if a device is of type sensor. This info is sent by the device simulator as a header. 
+Write 
+```
+deviceType = 'sensor' 
+```
+on the Rouying query field. Press "Save".
 5.  Start the telemetry again by setting the status to true on the twin document
 6. Once the route is activated, you may notice that the telemetry is no longer showing. Can You think of the reason for that?
 7. Wait a little and verify that the blob has now telemetry stored.
