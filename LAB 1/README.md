@@ -48,9 +48,8 @@ We are taken into a pane that shows the json document. Inspect it and locate the
 
 9.  Press "Save" to send the property to the device. 
 10. Verify the telemetry arriving at IoT Hub. Look on the IoT Hub Overview page and see “Usage” (Hit refresh and verify that the messages count is increased)
-11. Select your device on VS Code, right click and choose 'Start Monitoring D2C Message'  
-12. You can toggle the telemetry by setting the desired property _telemetry.status_ to false. Try that now.
-13. Start the telemetry again
+11. You can toggle the telemetry by setting the desired property _telemetry.status_ to false. Try that now.
+12. Start the telemetry again by setting the status to true on the twin document
     
 ## Invoke a direct method
 1. Verify the invocation of a direct method. Select your device in the portal. Verify that the device resets and the temperature starts from 25C again.
