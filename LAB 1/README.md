@@ -53,7 +53,9 @@ We are taken into a pane that shows the json document. Inspect it and locate the
 ## Invoke a direct method
 1. Verify the invocation of a direct method. Select your device in the portal. Verify that the device resets and the temperature starts from 25C again.
  
-![](images/InvokeReset.png)
+![](images/invokeReset.png)
+
+Note that depending on the quality of the network and the load on the device and IoT Hub, it may be a good idea to adjust the time out parameters.  
 
 ## Visual Studio Code
 
@@ -65,7 +67,8 @@ Once that is done, the extension will show your devices. Right click on your dev
 
 ## Save telemetry to cold storage for archival purposes
 
-One very common requirement in Iot projects is to store all incoming data for later processing, This is what we usually call the **cold path**. The cheapest storage available in Azure are blob storages, and we will save messages there
+One very common requirement in Iot projects is to store all incoming data for later processing, This is what we usually call the **cold path**. The cheapest storage available in Azure are blob storages, and we will save messages there  
+
 ### Create Blob storage
 1. Select your Resource group and then click the "+ Add" button to add a Storage Account
 2. Search for Storage Account and then click “Create”
@@ -94,7 +97,7 @@ Write
 ```
 deviceType = 'test' 
 ```
-on the Rouying query field. Press "Save".
+on the Routing query field. Press "Save".
 5.  Start the telemetry again by setting the status to true on the twin document
 6. Once the route is activated, you may notice that the telemetry is no longer showing. Can You think of the reason for that?
 7. Wait a little and verify that the blob has now telemetry stored.

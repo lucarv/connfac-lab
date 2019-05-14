@@ -43,14 +43,20 @@ FROM
 
 ### Create an Azure Function App
 
-Go back to your Resource group and Create a Function App.
- 
-1. Give it a unique name, it is fully addressable from the public internet!!!
-2. Select the Subscription, Resource Group and Region. Leave all other settings to default values.
-3. Select your newly created app. Expand the menu (Press the "+" next to the menu item "Functions"), select Quickstart and create an In-portal function. Select "more templates" then choose "HTTP Trigger". Give it a name.
-4. In the Function App run.csx file replace the default code with the code found [here](https://github.com/lucarv/connfac-lab/blob/master/LAB%202/function/run.csx)
-5. Under your Function go to View Files, add a file called function.proj
-6. Copy the content below to the function.proj file
+We will create a Service App that receives telemetry and act upon a condition. We will need to use the Service API to get it
+
+1. GO TO YOUR ioT hub and copy the service connection string
+   
+   ![](images/servicecs.png )
+
+2. Go back to your Resource group and Create a Function App.
+3. Give it a unique name, it is fully addressable from the public internet!!!
+4. Select the Subscription, Resource Group and Region. Leave all other settings to default values.
+5. Select your newly created app. Expand the menu (Press the "+" next to the menu item "Functions"), select Quickstart and create an In-portal function. Select "more templates" then choose "HTTP Trigger". Give it a name.
+6. In the Function App run.csx file replace the default code with the code found [here](https://github.com/lucarv/connfac-lab/blob/master/LAB%202/function/run.csx)
+7. Edit the code to enter the service connection string we saved in point 1
+8. Under your Function go to View Files, add a file called function.proj
+9. Copy the content below to the function.proj file
 
 ```json
 <Project Sdk="Microsoft.NET.Sdk">
@@ -65,7 +71,11 @@ Go back to your Resource group and Create a Function App.
 </Project>
 ```
 
-7. Restart the Function
+7. Press "Save". The function will download all necessary nuget packages you have declared in the function. It will then compile. 
+8. Observe the log at the bottom. When you see the line below you are ready
+```
+   2019-05-13T20:22:58.681 [Information] Compilation succeeded.
+```
 
 ### Update your Stream Analytics job
 
@@ -83,7 +93,7 @@ FROM
 WHERE Sensor.Temperature > 70.0
 ```
 4. Save your query.
-5. Use the direct methiod we created in Lab 1 to reset the device.
+5. Use the direct method we created in Lab 1 to reset the device.
 6. Start the Stream Analytics job (wait with next step until it is started)
 7. Run the Device Simulator
 8. Verify that when “Temperature” reaches 7 0+ degrees, the reset function is invoked on the device and then telemetry restarts at 25 degrees
