@@ -69,13 +69,14 @@ First we need to create a container to store the jobs that will be sent to the e
 
 ### Create a new job
 
-In the Azure portal, go to Create a resource > Internet of Things > Stream Analytics Job. W have already done this once, the difference is that now we will choose "Edge" as Hosting environment. As before, we need to configure an input, a query and an output. In the Edge case both input and output will be Edge Hub (for reasons that should be clear to us now). Note that the name of your input and output are important, as they need to match the entry points in your modules.
+In the Azure portal, go to Create a resource > Internet of Things > Stream Analytics Job. W have already done this once, the difference is that now we will choose "Edge" as Hosting environment. As before, we need to configure an input, a query and an output. In the Edge case both input and output will be Edge Hub (for reasons that should be clear to us now). Note that the name of your input and output are important, as they need to match the entry points in your modules. Let's call the input temperature and the output alert.
+
 For the query, we will replace the default quesry with the following query:
 ```
 SELECT  
     'reset' AS command 
 INTO 
-   alert 
+   alert
 FROM 
    temperature TIMESTAMP BY timeCreated 
 GROUP BY TumblingWindow(second,30) 
