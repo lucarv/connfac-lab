@@ -85,12 +85,13 @@ We will create a Service App that receives telemetry and act upon a condition. W
 4. Update your Stream Analytics query so add the statemet below to the existing query
 ```sql
 SELECT 
-    IoTHub.ConnectionDeviceId DeviceId
+    [iothub].IoTHub.ConnectionDeviceId as DeviceId
 INTO
-    [functionOutput]
+    [function]
 FROM 
-    [<YOUR IOTHUB ALIAS>]
-WHERE Sensor.Temperature > 70.0
+    [iothub]
+WHERE
+    Temperature > 70
 ```
 4. Save your query.
 5. Use the direct method we created in Lab 1 to reset the device.
@@ -101,3 +102,6 @@ WHERE Sensor.Temperature > 70.0
 ## Bonus Task
 
 If You and your team has managed to conclude this lab with time to spare, You can try modify the query in stream analytics to add an output to Power BI and create a live dashboard for your solution.
+
+
+[LAB 3](https://github.com/lucarv/connfac-lab/tree/master/LAB%203)
