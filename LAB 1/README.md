@@ -53,7 +53,7 @@ We are taken into a pane that shows the json document. Inspect it and locate the
 ## Invoke a direct method
 1. Verify the invocation of a direct method. Select your device in the portal. Verify that the device resets and the temperature starts from 25C again.
  
-![](images/invokeReset.png)
+![](images/InvokeReset.png)
 
 Note that depending on the quality of the network and the load on the device and IoT Hub, it may be a good idea to adjust the time out parameters.  
 
