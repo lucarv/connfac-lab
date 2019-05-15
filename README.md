@@ -6,4 +6,8 @@
 [LAB 2](https://github.com/lucarv/connfac-lab/tree/master/LAB%202)
 [LAB 3](https://github.com/lucarv/connfac-lab/tree/master/LAB%203)
 
+### DAY TWO - Azure Industrial Iot 
+[LAB 4](https://github.com/lucarv/connfac-lab/tree/master/LAB%204)
+
+
 https://github.com/lucarv/connfac-lab
