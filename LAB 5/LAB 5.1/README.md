@@ -1,6 +1,6 @@
 # DEVELOP YOUR OWN MODULE
 
-(or copy the code from [here]([))](https://github.com/lucarv/formatterModule/blob/master/app.js))
+(or copy the code from [here](https://github.com/lucarv/formatterModule/blob/master/app.js))
 
 ## Create a Private Registry
 
