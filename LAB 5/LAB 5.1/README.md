@@ -1,5 +1,7 @@
 # DEVELOP YOUR OWN MODULE
 
+(or copy the code from [here]([))](https://github.com/lucarv/formatterModule/blob/master/app.js))
+
 ## Create a Private Registry
 
 As we start authoring modules, we need to store the images to a Registry. You can use any docker compatible registry, so let's create a private one on Azure.  
