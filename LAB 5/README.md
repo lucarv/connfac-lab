@@ -62,9 +62,9 @@ This LAB will give you instructions to either:
 1. Create a node.js module.  You will be able to either write your own code or to use code that is ready for you.
    You can of course choose any other SDK you are more familiar with. You can find instructions for different languages [here](https://docs.microsoft.com/en-us/azure/iot-edge/tutorial-develop-for-linux). Just select your favorite language from bullet point 2.   
    
-   If You choose to do that, proceed to [LAB 5.1]()
+   If You choose to do that, proceed to [LAB 5.1](https://github.com/lucarv/connfac-lab/tree/master/LAB%205/LAB%205.1)
 
-2. Download a ready module from an external repo. If You choose to do that, proceed to [LAB 5.2]()   
+2. Download a ready module from an external repo. If You choose to do that, proceed to [LAB 5.2](https://github.com/lucarv/connfac-lab/tree/master/LAB%205/LAB%205.2)   
 
 ## Create a new manifest
 
