@@ -47,7 +47,10 @@ The pn.json filw is contains a json array. Each element in the array contains a 
 Each server will have a number of nodes you need to publish to IoT Hub. This is defined in the OpcNodes element of the server json object. You can add as many nodes as You want.  
 
 ## Create the deployment manifest
-Go back to the Portal and add a new module for the opc-ua publisher (like we did for the simulated temperature sensor). Let's name it **publisher**.
+Go back to the Portal and add a new module for the opc-ua publisher. LAst time we did it we got a module from the Marketplace. This time we will do it manmually.
+
+Go to Your device in the Portal an go all the way to Set Modules
+Let's name it **publisher**.
 This module is stored on the microsoft reporitory at mcr.microsoft.com/iotedge/opc-publisher:linux-arm32v7.  
 We need to mount the directory we created before, so in the Container Created Options, enter the following:
 ```
