@@ -22,5 +22,5 @@ Let's create a Time Series Insights , which is a tool that is very much apprecia
 5.  Choose from the dropdown
 6.  Our payload to IoT Hub is at the moment not formatted, and we can only see one graph on Time Series. We can however add predicates to Time Series to allow us for quickly separate the two values 
 
-![](images/tsi3.png )
+![](images/tsi2.png )
 
