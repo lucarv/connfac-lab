@@ -31,14 +31,6 @@ Use the IoT extensions for Visual Studio Code to develop IoT Edge modules. These
 4. Select View > Command Palette to open the VS Code command palette.
 5. In the command palette, type and run the command _Azure: Sign in_ and follow the instructions to sign in your Azure account. If you've already signed in, you can skip this step.
 6. In the command palette, type and run the command _Azure IoT Edge: New IoT Edge solution_ Follow the prompts in the command palette to create your solution
-   
-## Add your registry credentials
-
-The environment file stores the credentials for your container repository and shares those with the IoT Edge runtime. The runtime needs these credentials to pull your private images onto the IoT Edge device.
-
-1. In the VS Code explorer, open the .env file.
-2. Update the fields with the username and password values that you copied from your Azure container registry.
-3. Save this file.
 
 ## Select your target architecture
 
