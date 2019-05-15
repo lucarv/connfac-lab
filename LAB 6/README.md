@@ -12,17 +12,15 @@ Let's create a Time Series Insights , which is a tool that is very much apprecia
 
 ![](images/tsi.png )
 
-6. Press "Event Source". Choose the values to add the IoT Hub as input.
-
-![](images/tsi1.png )
 
 
-7. Once the provisioning is ready, select it and choose "Go to Environment" (top of Portal page)
-8. As a default, TSI will display a graph for the event as a counter (not super useful)
-9. Let's choose a relevant, input. Choose from the dropdown.
-10. Let's add more inputs. 
-11. Choose from the dropdown
-12. Our payload to IoT Hub is at the moment not formatted, and we can only see one graph on Time Series. We can however add predicates to Time Series to allow us for quickly separate the two values 
+
+1. Once the provisioning is ready, select it and choose "Go to Environment" (top of Portal page)
+2. As a default, TSI will display a graph for the event as a counter (not super useful)
+3. Let's choose a relevant, input. Choose from the dropdown.
+4.  Let's add more inputs. 
+5.  Choose from the dropdown
+6.  Our payload to IoT Hub is at the moment not formatted, and we can only see one graph on Time Series. We can however add predicates to Time Series to allow us for quickly separate the two values 
 
 ![](images/tsi3.png )
 
