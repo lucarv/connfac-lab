@@ -1,4 +1,4 @@
-# LAB 6 - Visualizing it
+# LAB 4 - Visualizing it
 So far we have used very rudimentary tools to look at our data. Let's fix that.
 
 ## Time Series Insights
