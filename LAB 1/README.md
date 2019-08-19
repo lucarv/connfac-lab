@@ -1,4 +1,4 @@
-﻿# LAB 2 - Azure IoT Hub
+﻿# Azure IoT Hub
 For this lab we will work a lot with IoT Hub. We will explore most of its functions using a device simulator.
 
 ## Step-by-step guide

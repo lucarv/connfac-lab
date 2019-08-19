@@ -1,4 +1,4 @@
-# LAB 5 -  Module Authoring 
+# Module Authoring 
 
 We have now quite an interesting micro services architecture in our Edge Device. It looks like:
 

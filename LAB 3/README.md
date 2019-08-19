@@ -1,4 +1,4 @@
-# LAB 3 - Edge Intelligence
+# Edge Intelligence
 For this lab we will implement the same architecture as in LAB 2, but we will be moving some of the work to the factory floor. For that we will deploy an Azure Edge Device.  
 
 
