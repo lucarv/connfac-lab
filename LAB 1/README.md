@@ -104,4 +104,4 @@ on the Routing query field. Press "Save".
 
 One drawback from using message routing in IoT Hub is that once a rule is matched, the telemetry is removed from the queue and can't be consumed by other applications. There are ways around this but for now let's just disable the route on the Portal. 
 
-[LAB 2](https://github.com/lucarv/connfac-lab/tree/master/LAB%202)
+[NEXT LAB](https://github.com/lucarv/connfac-lab/tree/master/LAB%202)

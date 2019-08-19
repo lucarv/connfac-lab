@@ -1,4 +1,4 @@
-﻿# LAB 3 - Lambda Architecture
+﻿# LAB 2 - Lambda Architecture
 For this lab we will attach a stream processor that will subscribe to the telemetry from IoT Hub. It will observe the event flow.
 
 ![](images/lambda.png)
@@ -104,4 +104,4 @@ WHERE
 If You and your team has managed to conclude this lab with time to spare, You can try modify the query in stream analytics to add an output to Power BI and create a live dashboard for your solution.
 
 
-[LAB 3](https://github.com/lucarv/connfac-lab/tree/master/LAB%203)
+[NEXT LAB](https://github.com/lucarv/connfac-lab/tree/master/LAB%206)

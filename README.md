@@ -5,3 +5,5 @@
 [LAB 2 - IoT Hub](https://github.com/lucarv/connfac-lab/tree/master/LAB%201)  
 [LAB 3 - Lambda Architecture](https://github.com/lucarv/connfac-lab/tree/master/LAB%202)  
 [LAB 4 - TIme Series Insigths](https://github.com/lucarv/connfac-lab/tree/master/LAB%206)   
+
+### DAY TWO - Edge and Connected Factory
