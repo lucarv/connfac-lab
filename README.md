@@ -8,6 +8,6 @@
 
 
 ### DAY TWO - Edge and Connected Factory
-[LAB 1 - Azure IoT edge](https://github.com/lucarv/connfac-lab/tree/master/LAB%203) 
-[LAB 2 - Azure Industrial IoT](https://github.com/lucarv/connfac-lab/tree/master/LAB%204)
+[LAB 1 - Azure IoT edge](https://github.com/lucarv/connfac-lab/tree/master/LAB%203)   
+[LAB 2 - Azure Industrial IoT](https://github.com/lucarv/connfac-lab/tree/master/LAB%204)  
 [LAB 3 - Module Authoring](https://github.com/lucarv/connfac-lab/tree/master/LAB%205)
