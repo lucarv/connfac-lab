@@ -121,4 +121,4 @@ In this section, you use the Set Modules wizard in the Azure portal to create a 
 
 ![](images/asa.png )
 
-[NEXT LAB](https://github.com/lucarv/connfac-lab/tree/master/LAB%205)
+[NEXT LAB](https://github.com/lucarv/connfac-lab/tree/master/LAB%204)
