@@ -13,7 +13,7 @@ We will need to store this configuration file on the edge device and subsequentl
 Let's do that first!
 
 
-1. SSH into the raspberry pi
+1. SSH into the edge device
 2. Create a folder called iotedge with a file called **pn.json**. Run the following commands:
 ```
 > mkdir iotedge  
@@ -43,15 +43,16 @@ Let's do that first!
   }
 ]
 ```
-The pn.json filw is contains a json array. Each element in the array contains a json object that describes the OPC-UA server the publisher will connect to. You can connect to as many servers as you need.  
+The pn.json file contains a json array. Each element in the array contains a json object that describes the OPC-UA server the publisher will connect to. You can connect to as many servers as you need.  
 Each server will have a number of nodes you need to publish to IoT Hub. This is defined in the OpcNodes element of the server json object. You can add as many nodes as You want.  
 
 ## Create the deployment manifest
-Go back to the Portal and add a new module for the opc-ua publisher. LAst time we did it we got a module from the Marketplace. This time we will do it manmually.
+Go back to the Portal and add a new module for the opc-ua publisher. Last time we did it we got a module from the Marketplace. This time we will do it manually.
 
 Go to Your device in the Portal an go all the way to Set Modules
 Let's name it **publisher**.
-This module is stored on the microsoft reporitory at mcr.microsoft.com/iotedge/opc-publisher:linux-arm32v7.  
+This module is stored on the microsoft reporitory at mcr.microsoft.com/iotedge/opc-publisher:linux-arm32v7. (if you are on a raspberry pi)
+Check [docker Hub](https://hub.docker.com/_/microsoft-iotedge-opc-publisher) to see which operating systems and processor architectures are supported. The right container for your OS and CPU architecture (if supported) will be automatically selected and used. otherwise choose one for your platform)  
 We need to mount the directory we created before, so in the Container Created Options, enter the following:
 ```
 {
