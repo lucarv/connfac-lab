@@ -11,8 +11,15 @@ First we will pre-provision an EDGE device identity in IoT Hub (look for IoT Edg
 ![](images/provision2hub.png )
 
 
-## Prepare the physical device  
-In this lab we will be deploying an edge device on a Raspberry Pi 3.  
+## Prepare the device  
+In this lab we will be preferrably deploying an edge device on:  
+OPTION 1: a Raspberry Pi 3.  
+OPTION 2: a VM or laptop running Linux. Follow the tutorial on https://docs.microsoft.com/en-us/azure/iot-edge/how-to-install-iot-edge-linux  
+OPTION 3: a VM or laptop running Windows. Follow the tutorial on https://docs.microsoft.com/en-us/azure/iot-edge/how-to-install-iot-edge-windows  
+
+Contionue below if you are using a reaspberry pi.
+Otherwise move to Part 2 on this tutorial.
+
 Connect to the device via ssh (or putty if you are on a Windows PC).  
 As we have learnt, Azure Edge is a SW component depolyed on COTS HW running Windows or Linux (which You will use).  We also learned that Edge runs a microservices architecture on docker, so we will first install that on the device.  
 
@@ -33,6 +40,10 @@ curl -L https://aka.ms/iotedged-linux-armhf-latest -o iotedge.deb && sudo dpkg -
 
 ### Run fix
 sudo apt install -f   
+
+
+
+## Manage the device on Azure  
 
 At this point we are ready to connect the Edge Device to the Cloud. We need to provision the symmetric key to the device and for this lab we will do it manually by editing the Edge config file and pasting the Edge connection string we provisioned earlier in this lab:   
 > sudo nano /etc/iotedge/config.yaml  
@@ -61,7 +72,8 @@ Open the command prompt on the computer running your simulated device again. Con
 > sudo iotedge logs -f SimulatedTemperatureSensor  
 
 You can also verify the D2C messages using the device explorer or visual code.
-### Create a Stream Analytics job
+
+## Part 2: Create a Stream Analytics job
 Instead of sending every single reading from the device, let's save connectivity costs by only send averages. We will also want to repeat the behaviour of the previous lab, where we will reset the device once the temperature reach a threshold. 
 First we need to create a container to store the jobs that will be sent to the edge. 
 
