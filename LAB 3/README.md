@@ -51,6 +51,7 @@ At this point we are ready to connect the Edge Device to the Cloud. We need to p
 Once you have done it, reboot the security daemon by running the following command on the terminal:  
 > systemctl restart iotedge
 
+## Part 2. Generate data
 You can verify that the Edge Device is ready to be further configured by means of a deployment manifest. A manifest is a json document containing modules and pipelines.
 Modules can be downloaded from any docker repository, and some of them are available at the Edge Market place on the Azure Portal. We will fetch a module that will simulate a device sending telemetry.  
 
@@ -73,7 +74,7 @@ Open the command prompt on the computer running your simulated device again. Con
 
 You can also verify the D2C messages using the device explorer or visual code.
 
-## Part 2: Create a Stream Analytics job
+## Create a Stream Analytics job
 Instead of sending every single reading from the device, let's save connectivity costs by only send averages. We will also want to repeat the behaviour of the previous lab, where we will reset the device once the temperature reach a threshold. 
 First we need to create a container to store the jobs that will be sent to the edge. 
 
