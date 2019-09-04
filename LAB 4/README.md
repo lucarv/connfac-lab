@@ -31,13 +31,13 @@ Let's do that first!
         "Id": "ns=1;s=020",
         "OpcSamplingInterval": 1000,
         "OpcPublishingInterval": 5000,
-        "DisplayName": "Current time"
+        "DisplayName": "Max Drive RPM"
       },
       {
-        "Id": "ns=1;s=050",
+        "Id": "ns=1;s=040",
         "OpcSamplingInterval": 1000,
         "OpcPublishingInterval": 5000,
-        "DisplayName": "Current time"
+        "DisplayName": "Pressure Alarm On"
       }
     ]
   }
