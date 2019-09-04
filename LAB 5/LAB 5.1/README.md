@@ -87,9 +87,9 @@ Now you need to build the solution as a container image and push it to your cont
 ```
 > docker login -u <ACR username> -p <ACR password> <ACR login server>
 ```
-4. Right click on the Docker.arm32v7 file on the left pane on VS. 
+4. Right click on the Docker.arm32v7 (if you are on a raspberry pi, on linux you should use amd64) file on the left pane on VS. 
 5. Choose build
-6. Name your module as <MYACR>.azurecr.io/formatter:0.0.1
+6. Name your module as _MYACR_.azurecr.io/formatter:0.0.1
 7. Push Your module to your registry. The easiest way is to use the Docker extension for visual code. Just open the extension, expand your image, choose the right version, right click and select 'Push'
 
 Done! You can now go back to [LAB 5](https://github.com/lucarv/connfac-lab/tree/master/LAB%205)
