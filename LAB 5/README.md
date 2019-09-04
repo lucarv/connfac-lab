@@ -9,35 +9,20 @@ This is quite a stretch for the little reaspberry pi, but we will push it even f
 As You notice, the PLC is sending data in 1000 ms interval, and we are sending data to IoT Hub every 5 seconds (as per our pn.json file). That means that we are sending an array of values to IoT Hub. 
 ```
 [
+    
     {
         "NodeId": "ns=1;s=020",
-        "DisplayName": "Carico Mobile Testa Linea",
+        "DisplayName": "Max Driver RPM",
         "Value": {
-            "Value": 1.8922288759663677,
+            "Value": 26.411371297004273,
             "SourceTimestamp": "2019-05-11T06:39:14.4652272Z"
         }
     },
     {
-        "NodeId": "ns=1;s=050",
-        "DisplayName": "Avvitatura Supporti Ammortizzatori",
+        "NodeId": "ns=1;s=040",
+        "DisplayName": "Pressure Alarm On",
         "Value": {
-            "Value": 3.0535855908443765,
-            "SourceTimestamp": "2019-05-11T06:39:14.4659883Z"
-        }
-    },
-    {
-        "NodeId": "ns=1;s=020",
-        "DisplayName": "Carico Mobile Testa Linea",
-        "Value": {
-            "Value": 1.97165655681878,
-            "SourceTimestamp": "2019-05-11T06:39:19.4708524Z"
-        }
-    },
-    {
-        "NodeId": "ns=1;s=050",
-        "DisplayName": "Avvitatura Supporti Ammortizzatori",
-        "Value": {
-            "Value": 3.477945840245054,
+            "Value": false,
             "SourceTimestamp": "2019-05-11T06:39:19.4715840Z"
         }
     }
@@ -50,10 +35,6 @@ Your task now is to create a module that looks into the sampling array above and
 [
   {
     "NodeId": "ns=1;s=020",
-    "Value": <THE AVERAGE OF ALL READINGS FOR THIS TAG IN THIS ARRAY>
-  },
-  {
-    "NodeId": "ns=1;s=050",
     "Value": <THE AVERAGE OF ALL READINGS FOR THIS TAG IN THIS ARRAY>
   }
 ]
