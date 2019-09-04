@@ -66,8 +66,8 @@ function formatMessage(client, inputName, msg) {
         // CONVERT THE NEW JSON INTO A STRING, CALLED THIS STRING 'formattedMsg' AND YOU ARE DONE
         // end pseudo code
 
-        // THIS CODE IS READY FOR YOU IF YOU ARE NOT OMFORTABLE WITH CODING
-        // ASK YOUR PROCTOR AND HE WILL SHOW WHEE TO GET IT FROM
+        // THIS CODE IS READY FOR YOU IF YOU ARE NOT COMFORTABLE WITH CODING
+        // ASK YOUR PROCTOR AND HE WILL SHOW WHERE TO GET IT FROM
 
             var outputMsg = new Message(formattedMsg);
             outputMsg.properties.add('MessageType', 'Alert');
