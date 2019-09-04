@@ -43,7 +43,7 @@ Let's do that first!
   }
 ]
 ```
-The pn.json file contains a json array. Each element in the array contains a json object that describes the OPC-UA server the publisher will connect to. You can connect to as many servers as you need.  
+The pn.json file contains a json array. Each element in the array contains a json object that describes the OPC-UA server the publisher will connect to. You can connect to as many servers as you need. Make sure you know the absolute path to this file, you will need later to map thios volume into docker.
 Each server will have a number of nodes you need to publish to IoT Hub. This is defined in the OpcNodes element of the server json object. You can add as many nodes as You want.  
 
 ## Create the deployment manifest
