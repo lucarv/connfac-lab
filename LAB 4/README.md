@@ -81,7 +81,7 @@ Add a route so the publisher sends data to the IoT Hub. You should be able to fi
 
 Push the manifest to the edge device. This module is quite big, so it might take a while before it is ready. Keep checking your device on the Portal (or on the edge, by issuing the _iotedge list_ command), when it is ready, you should be able to see telemetry from the OPC-UA Server coming into the IoT Hub
 
-![](images/devexplorer.png )
+![](images/vcscreen.png )
 
 
 [NEXT LAB](https://github.com/lucarv/connfac-lab/tree/master/LAB%205)
