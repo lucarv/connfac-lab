@@ -26,6 +26,10 @@ Let's do that first!
   {
     "EndpointUrl": "opc.tcp://ekskog.net:4334/UA/HBVUattic",
     "UseSecurity": false,
+    //"UseSecurity": true,
+    //"OpcAuthenticationMode": "UsernamePassword",
+    //"Username": "<Username>",
+    //"Password": "<Password>"
     "OpcNodes": [
       {
         "Id": "ns=1;s=020",
@@ -51,7 +55,7 @@ Go back to the Portal and add a new module for the opc-ua publisher. Last time w
 
 Go to Your device in the Portal an go all the way to Set Modules
 Let's name it **publisher**.
-This module is stored on the microsoft reporitory at mcr.microsoft.com/iotedge/opc-publisher:linux-arm32v7. (if you are on a raspberry pi)
+This module is stored on the microsoft reporitory at mcr.microsoft.com/iotedge/opc-publisher:linux-arm32v7 (if you are on a raspberry pi) or :2.3 (otherwise)
 Check [docker Hub](https://hub.docker.com/_/microsoft-iotedge-opc-publisher) to see which operating systems and processor architectures are supported. The right container for your OS and CPU architecture (if supported) will be automatically selected and used. otherwise choose one for your platform)  
 We need to mount the directory we created before, so in the Container Created Options, enter the following:
 ```
