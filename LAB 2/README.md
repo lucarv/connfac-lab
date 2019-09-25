@@ -44,4 +44,4 @@ FROM
 Modify the query in stream analytics to add an output to Power BI and create a live dashboard for your solution.
 We will do this together, your proctor will guide you through that
 
-[NEXT LAB](https://github.com/lucarv/connfac-lab/tree/master/LAB%206)
+[NEXT LAB](https://github.com/lucarv/connfac-lab/tree/master/LAB%203)
