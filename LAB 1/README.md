@@ -63,7 +63,7 @@ If you have not yet done it, now is a good time to install Visual Studio Code an
 
 ![](images/vsc1.png)
 
-Once that is done, the extension will show your devices. Right click on your device and select "Start Monitoring Built In Ednpoint". See your messages appear in the lower tab of VS Code
+Once that is done, the extension will show your devices. Right click on your device and select "Start Monitoring Built In Endpoint". See your messages appear in the lower tab of VS Code
 
 ## Save telemetry to cold storage for archival purposes
 
