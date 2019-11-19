@@ -37,24 +37,38 @@ FROM
 
 ![](images/observe.png )
 
-13. After about 3 minutes when the stream analytics engine samples the data on the IoT Hub, a little icon appears next to the input name. Press 'Test'. Look at the results.
-14. In the previous lab, we had a route from IoT Hub to Blob that we disabled. If you go back to the Portal and re-enable it, You will notice that no messages reach Stream Analytics. One way of still keeping the pattern is to have Stream Analytics do the routing instead So let's do that.
-15. Click the “Add Stream Output" button, select Blob Storage and setup it so telemetry is stored in the container we created in Lab 1. 
-16. Edit the Query as to select telemetry INTO the container
+13. Note that Stream Analytics is automatic sampling data from Iot Hub.
+
+### Send Data to Cosmos DB
+
+1. Add an output to your job. Choose to output to a database in your newly created Cosmos Account. 
+2. Create a  Query as to select telemetry INTO the DB
+```sql
+SELECT *
+INTO
+    [<YOUR COSMOSDB ALIAS>]
+FROM 
+    [<YOUR IOTHUB ALIAS>]
+```  
+
+### Send Data to Blob
+
+1. In the previous lab, we had a route from IoT Hub to Blob that we disabled. If you go back to the Portal and re-enable it, You will notice that no messages reach Stream Analytics. One way of still keeping the pattern is to have Stream Analytics do the routing instead. So let's do that.
+2. Click the “Add Stream Output" button, select Blob Storage and setup it so telemetry is stored in the container we created in Lab 1. Choose to store the data in parquet format.  
+3. Create another Query as to select telemetry INTO the container
 ```sql
 SELECT *
 INTO
     [<YOUR BLOB ALIAS>]
 FROM 
     [<YOUR IOTHUB ALIAS>]
-```    
-17. Save the work and start the job from the overview pane on the Stream Analytics Job page. 
-18. Verify that telemetry is again stored in the container.  
+```  
+
+### Start the job
+
+1. Save the work and start the job from the overview pane on the Stream Analytics Job page. 
+2. Verify that telemetry is again stored in the container. 
+3. Verify the telemetry is stored in Cosmos DB 
 
 
-### Create a streaming dataset
 
-Modify the query in stream analytics to add an output to Power BI and create a live dashboard for your solution.
-We will do this together, your proctor will guide you through that
-
-[NEXT LAB](https://github.com/lucarv/connfac-lab/tree/master/LAB%203)

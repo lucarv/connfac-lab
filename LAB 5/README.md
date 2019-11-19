@@ -1,75 +1,91 @@
-# Module Authoring 
+# Azure Industrial IoT
+For this lab we will implement move into opc-ua territory. We will add an OPC-UA publisher to the EDGE device, subscribe to a few nodes and publish the node values to the IoT Hub.
 
-We have now quite an interesting micro services architecture in our Edge Device. It looks like:
+![](images/arch.png )
 
-![](images/arch2.png )
+We will need to create an new deployment manifest that includes the opc-ua publisher.  
 
-This is quite a stretch for the little reaspberry pi, but we will push it even further!  
+## Create config file on the Edge device  
 
-As You notice, the PLC is sending data in 1000 ms interval, and we are sending data to IoT Hub every 5 seconds (as per our pn.json file). That means that we are sending an array of values to IoT Hub. 
+This module needs to read a config file that contains information about the OPC-UA servers and nodes that it should connect too.  
+We will need to store this configuration file on the edge device and subsequently mount it so it is available for the module.  
+
+Let's do that first!
+
+
+1. SSH into the edge device
+2. Create a folder called iotedge with a file called **pn.json**. Run the following commands:
 ```
-[
-    
-    {
-        "NodeId": "ns=1;s=020",
-        "DisplayName": "Max Driver RPM",
-        "Value": {
-            "Value": 26.411371297004273,
-            "SourceTimestamp": "2019-05-11T06:39:14.4652272Z"
-        }
-    },
-    {
-        "NodeId": "ns=1;s=040",
-        "DisplayName": "Pressure Alarm On",
-        "Value": {
-            "Value": false,
-            "SourceTimestamp": "2019-05-11T06:39:19.4715840Z"
-        }
-    }
-]
+> mkdir iotedge  
+> cd iotedge  
+> nano pn.json
 ```
-
-Your task now is to create a module that looks into the sampling array above and send to IoT Hub the following payload:
-
+3. Insert the following lines in the pn.json file, save and exit nano.
 ```
 [
   {
-    "NodeId": "ns=1;s=020",
-    "Value": <THE AVERAGE OF ALL READINGS FOR THIS TAG IN THIS ARRAY>
+    "EndpointUrl": "opc.tcp://ekskog.net:4334/UA/HBVUattic",
+    "UseSecurity": false,
+    //"UseSecurity": true,
+    //"OpcAuthenticationMode": "UsernamePassword",
+    //"Username": "<Username>",
+    //"Password": "<Password>"
+    "OpcNodes": [
+      {
+        "Id": "ns=1;s=020",
+        "OpcSamplingInterval": 1000,
+        "OpcPublishingInterval": 5000,
+        "DisplayName": "Max Drive RPM"
+      },
+      {
+        "Id": "ns=1;s=040",
+        "OpcSamplingInterval": 1000,
+        "OpcPublishingInterval": 5000,
+        "DisplayName": "Pressure Alarm On"
+      }
+    ]
   }
 ]
 ```
-This LAB will give you instructions to either:
-1. Create a node.js module.  You will be able to either write your own code or to use code that is ready for you.
-   You can of course choose any other SDK you are more familiar with. You can find instructions for different languages [here](https://docs.microsoft.com/en-us/azure/iot-edge/tutorial-develop-for-linux). Just select your favorite language from bullet point 2.   
-   
-   If You choose to do that, proceed to [LAB 5.1](https://github.com/lucarv/connfac-lab/tree/master/LAB%205/LAB%205.1).
+The pn.json file contains a json array. Each element in the array contains a json object that describes the OPC-UA server the publisher will connect to. You can connect to as many servers as you need. Make sure you know the absolute path to this file, you will need later to map thios volume into docker.
+Each server will have a number of nodes you need to publish to IoT Hub. This is defined in the OpcNodes element of the server json object. You can add as many nodes as You want.  
 
-2. Download a ready module from an external repo. If You choose to do that, proceed to [LAB 5.2](https://github.com/lucarv/connfac-lab/tree/master/LAB%205/LAB%205.2)   
+## Create the deployment manifest
+Go back to the Portal and add a new module for the opc-ua publisher. Last time we did it we got a module from the Marketplace. This time we will do it manually.
 
-## Create a new manifest
+Go to Your device in the Portal an go all the way to Set Modules
+Let's name it **publisher**.
+This module is stored on the microsoft reporitory at mcr.microsoft.com/iotedge/opc-publisher:linux-arm32v7 (if you are on a raspberry pi) or :2.3 (otherwise)
+Check [docker Hub](https://hub.docker.com/_/microsoft-iotedge-opc-publisher) to see which operating systems and processor architectures are supported. The right container for your OS and CPU architecture (if supported) will be automatically selected and used. otherwise choose one for your platform)  
+We need to mount the directory we created before, so in the Container Created Options, enter the following:
+```
+{
+  "Hostname": "publisher",
+  "Cmd": [
+    "--pf=./pn.json",
+    "--aa"
+  ],
+  "HostConfig": {
+    "Binds": [
+      "/home/pi/iotedge:/appdata"
+    ]
+  }
+}
+```  
 
-You can now go back to the portal and add the new module to the deployment manifest.
-Remember that modules are not **PUSHED** to the edge device. The Edge device **PULLS** it from the registry, and therefore you must add the registry information to the manifest, as shown in the image below:
-
-![](images/config-registry.png )
-
-If you created your own module, use the credentials for your container registry.  
-If you are using a ready made module, ask your proctor for redentials.  
-
-Proceed by adding this module to the manifest as we have done before (nmae it formatter), then create your Route as below
+Add a route so the publisher sends data to the IoT Hub. You should be able to figure out what to add in the "Specify Routes" tab...  
 ``` 
 {
     "routes": {
       <YOUR EXISTING ROUTES>
-      , "formatterToCloud": "FROM /messages/modules/formatter/* INTO $upstream"
-      , "publisherToFormatter": "FROM /messages/modules/publisher/* INTO BrokeredEndpoint(\"/modules/formatter/inputs/input1\")",
-
+      , "opcPubToCloud": "FROM /messages/modules/publisher/* INTO $upstream"
     }
 }
 ```
-and push it to the Edge Module.
 
-## View generated data
+Push the manifest to the edge device. This module is quite big, so it might take a while before it is ready. Keep checking your device on the Portal (or on the edge, by issuing the _iotedge list_ command), when it is ready, you should be able to see telemetry from the OPC-UA Server coming into the IoT Hub
 
-You can view the status of your IoT Edge device using the Azure IoT Hub Devices section of the Visual Studio Code explorer. Expand the details of your device to see a list of deployed and running modules.
+![](images/vcscreen.png )
+
+
+[NEXT LAB](https://github.com/lucarv/connfac-lab/tree/master/LAB%205)

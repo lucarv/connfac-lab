@@ -19,5 +19,6 @@ At the end of these 3 days we will be proudly showing a fully functioning Connec
 - A laptop with node.js, Docker and Visual Studio Code.
 - IoT Hub, IoT Edge and Docker extensions for VSC.
 - One Raspberry Pi per group of maximum 3 people.  
+- Access to an Azure and a Power BI Subscription
 
 [AGENDA](https://github.com/lucarv/connfac-lab/blob/master/agenda%20day%20one.md)  
