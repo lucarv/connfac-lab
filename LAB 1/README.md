@@ -66,6 +66,21 @@ We are taken into a pane that shows the json document. Inspect it and locate the
 
 Note that depending on the quality of the network and the load on the device and IoT Hub, it may be a good idea to adjust the time out parameters.  
 
+## Tags
+
+Tags are very useful to create device fleets in IoT Hub. It allows operators to create batch jobs that apply to fleets instead of single devices.  
+Open your device twin document in the cloud and add tags to your device.  
+```
+"tags": {
+    "type": "simulated",
+    "hw": "raspberry pi",
+    "fw": "1.0.0"
+},
+```
+
+Now see the results by querying the device registry in the portal.  Write a query to find out all simulated devices that are transmitting telemetry.  
+Hint: The IoT Hub query languge is SQL-like, and you can find its documentation [here](https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-devguide-query-language)  
+
 ## Visual Studio Code
 
 If you have not yet done it, now is a good time to install Visual Studio Code and the Azure IoT Hub Tool extension. Once You have done that, right click on the extension and select your IoT Hub. You can do that by clicking on the elipsis (the periods) next to the extension on VS Code.
