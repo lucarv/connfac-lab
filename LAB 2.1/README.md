@@ -1,6 +1,6 @@
 # LAB 2.1: Lambda Architecture Batch Layer  
 
-In LAB 1 we have explored IoT Hub, which is Azure's IoT Cloud Ingestion Service. As we have learned, IoT Hub is a message queue with routing capabilities, and so far we have received telemetry and have not done anything with it. We will now add to our lambda architecture by creating a batch layer. 
+In LAB 1 we have explored IoT Hub, which is Azure's IoT Cloud Ingestion Service. As we have learned, IoT Hub is a message queue with routing capabilities, and so far we have received telemetry and have not done anything with it. We will now add to our lambda architecture by creating a batch layer.   
 
 ![](images/batch.png)
 
@@ -42,7 +42,7 @@ on the Routing query field. Press "Save".
 
 One drawback from using message routing in IoT Hub is that once a rule is matched, the telemetry is removed from the queue and can't be consumed by other applications. There are ways around this but for now let's just disable the route on the Portal.  
 
-## Time Series Insights
+## Create Time Series Insights
 
 Let's create a Time Series Insights , which is a tool that is very much appreciated by Operations teams in manufacturing. This tool behaves very much like a cloud historian, with the added bonus of a very useful UI. It is built on top of Azure Data Explorer, which we will explore (pun intended) further later...
 
@@ -59,4 +59,4 @@ Let's create a Time Series Insights , which is a tool that is very much apprecia
 3. Let's choose a relevant, input. Choose from the dropdown.
 4. Let's add more inputs.  
 5. Choose from the dropdown
-6. Observe the Time Series graphs and heat maps
+6. Observe the Time Series graphs and heat maps. Try writing a simple few queries.  
