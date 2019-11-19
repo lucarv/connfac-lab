@@ -68,7 +68,6 @@ FROM
 
 1. Save the work and start the job from the overview pane on the Stream Analytics Job page. 
 2. Verify that telemetry is again stored in the container. 
-3. Verify the telemetry is stored in Cosmos DB 
+3. Verify the telemetry is stored in Cosmos DB  
 
-
-
+[BACK TO THE AGENDA](https://github.com/lucarv/connfac-lab/blob/master/agenda%20day%20one.md)  
