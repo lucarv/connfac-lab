@@ -73,3 +73,5 @@ If you have not yet done it, now is a good time to install Visual Studio Code an
 ![](images/vsc1.png)
 
 Once that is done, the extension will show your devices. Right click on your device and select "Start Monitoring Built In Endpoint". See your messages appear in the lower tab of VS Code.  
+
+[BACK TO THE AGENDA](https://github.com/lucarv/connfac-lab/blob/master/agenda%20day%20one.md)  
