@@ -72,8 +72,4 @@ If you have not yet done it, now is a good time to install Visual Studio Code an
 
 ![](images/vsc1.png)
 
-Once that is done, the extension will show your devices. Right click on your device and select "Start Monitoring Built In Endpoint". See your messages appear in the lower tab of VS Code
-
-## Save telemetry to cold storage for archival purposes
-
-One very common requirement in Iot projects is to store all incoming data for later processing, This is what we usually call the **cold path**. The cheapest storage available in Azure are blob storages, and we will save messages there  
+Once that is done, the extension will show your devices. Right click on your device and select "Start Monitoring Built In Endpoint". See your messages appear in the lower tab of VS Code.  
