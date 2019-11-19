@@ -1,5 +1,7 @@
 # LAB 2.1: Lambda Architecture Batch Layer  
 
+In LAB 1 we have explored IoT Hub, which is Azure's IoT Cloud Ingestion Service. As we have learned, IoT Hub is a message queue with routing capabilities, and so far we have received telemetry and have not done anything with it. We will now add to our lambda architecture by creating a batch layer. 
+
 ![](images/batch.png)
 
 ## Create Blob storage
