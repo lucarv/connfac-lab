@@ -79,6 +79,10 @@ Open your device twin document in the cloud and add tags to your device.
 ```
 
 Now see the results by querying the device registry in the portal.  Write a query to find out all simulated devices that are transmitting telemetry.  
+
+![](images/query.png)
+
+
 Hint: The IoT Hub query languge is SQL-like, and you can find its documentation [here](https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-devguide-query-language)  
 
 ## Visual Studio Code
