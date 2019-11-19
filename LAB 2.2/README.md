@@ -8,7 +8,6 @@ For this lab we will attach a stream processor that will subscribe to the teleme
 
 1. Select your Resource group and then click the "+ Add" button to add to the serving layer
 2. Search for Cosmos DB and then click “Create”
-3. Enter a job name (unique within the resource group)
 4. Select the Subscription, Resource Group and Region
 5. Give an account name
 6. Leave everything else with default settings
