@@ -11,12 +11,12 @@ In LAB 1 we have explored IoT Hub, which is Azure's IoT Cloud Ingestion Service.
 3. Select the subscription, Resource Group and Region
 4. Give it a unique name. A Storage Account is fully addressable from the public internet!!!
 6. Leave everything else with default settings
-7. Press “Review + create“
+7. Press “Review + create“  
 8. Verify the settings and press “Create“
+
+![](images/create-storage.png)
+
 9. When the resource is created, go to it
-
-![](images/storage-complete.png)
-
 10. On the landing blade, Select Blobs
 11. Create a Container by Pressing the appropriate Button. Give it a name and select "Container" as Public Access level
 
