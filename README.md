@@ -8,7 +8,7 @@ We will be getting our hands dirty from the start. We will make pauses when appr
 
 Please follow the instructions step-by-step. We have noticed that 9 out of 10 times when things don't work is because we have accidentally missed one or more steps. For that odd cases, we might even hand out a cool sticker for those who help us correct/improve the instructions.
 
-At the end of these 3 days we will be prod=udy showing a fully functioning Connected Factory solution, like the one below, and even better!
+At the end of these 3 days we will be proudly showing a fully functioning Connected Factory solution, like the one below, and even better!
 
 ![](images/connfac.png)
 
