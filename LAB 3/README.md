@@ -1,5 +1,7 @@
 # LAB 3: Creating Live Dashboards (Lambda Query)
 
+Now for the cherry of the cake, what the execs will really look at...  
+
 ![](images/query.png)
 
 
