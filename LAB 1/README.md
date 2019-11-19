@@ -7,7 +7,7 @@ Sign in to <http://portal.azure.com>
 ### Create/Select Resource group 
 On the left pane choose Resource Groups.
 1. Click the "+ Add" button to create a new Resource group, or in case a Resource Group has been assigned, choose it.
-2. Give the Resource group a name and choose North Europe as region
+2. Give the Resource group a name and choose the region that is closer to You
 
 ### Create IoT Hub
 (You might need to the refresh icon in Azure to see your new Resource group)
