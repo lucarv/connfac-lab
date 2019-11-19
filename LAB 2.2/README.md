@@ -1,7 +1,20 @@
-﻿# Lambda Architecture
-For this lab we will attach a stream processor that will subscribe to the telemetry from IoT Hub. It will observe the event flow.
+﻿# LAB 2.2: Lambda Architecture Speed and Serving Layer  
 
-### Create Stream Analytics Job
+For this lab we will attach a stream processor that will subscribe to the telemetry from IoT Hub. It will observe the event flow, we will then push the data into a serving layer
+
+![](images/speed-and-serve.png)
+
+## Create Cosmos DB
+
+1. Select your Resource group and then click the "+ Add" button to add to the serving layer
+2. Search for Cosmos DB and then click “Create”
+3. Enter a job name (unique within the resource group)
+4. Select the Subscription, Resource Group and Region
+5. Give an account name
+6. Leave everything else with default settings
+7. Press “Create“
+
+## Create Stream Analytics Job
 
 1. Select your Resource group and then click the "+ Add" button to add a Stream Analytics Job
 2. Search for Stream Analytics Job and then click “Create”
@@ -20,7 +33,7 @@ SELECT
 FROM 
     [<YOUR IOTHUB ALIAS>]
 ```    
-12. Let's observe the stream before we create a query. Right click on the input name and choose "Sample data from input". Accept all parameters, an press "ok".
+12. Let's observe the stream before we create a query. 
 
 ![](images/observe.png )
 
@@ -35,7 +48,7 @@ INTO
 FROM 
     [<YOUR IOTHUB ALIAS>]
 ```    
-17. Save the work and start the job from trhe overview pane on the Stream Analytics Job page. 
+17. Save the work and start the job from the overview pane on the Stream Analytics Job page. 
 18. Verify that telemetry is again stored in the container.  
 
 

@@ -1,6 +1,7 @@
 # LAB 2.1: Lambda Architecture Batch Layer  
 
-In LAB 1 we have explored IoT Hub, which is Azure's IoT Cloud Ingestion Service. As we have learned, IoT Hub is a message queue with routing capabilities, and so far we have received telemetry and have not done anything with it. We will now add to our lambda architecture by creating a batch layer.   
+In LAB 1 we have explored IoT Hub, which is Azure's IoT Cloud Ingestion Service. As we have learned, IoT Hub is a message queue with routing capabilities, and so far we have received telemetry and have not done anything with it. We will now add to our lambda architecture by creating a batch layer.  
+(Note that this is a very simplified batch layer, with very rudimentsr pre-compute and storage for the master dataset)  
 
 ![](images/batch.png)
 
@@ -59,4 +60,7 @@ Let's create a Time Series Insights , which is a tool that is very much apprecia
 3. Let's choose a relevant, input. Choose from the dropdown.
 4. Let's add more inputs.  
 5. Choose from the dropdown
-6. Observe the Time Series graphs and heat maps.
+6. Observe the Time Series graphs and heat maps.  
+
+[ADD MORE LAYERS](https://github.com/lucarv/connfac-lab/tree/master/LAB%202.2)  
+
