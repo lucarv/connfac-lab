@@ -1,5 +1,7 @@
 # LAB 2.1: Lambda Architecture Batch Layer  
 
+![](images/batch.png)
+
 ## Create Blob storage
 
 1. Select your Resource group and then click the "+ Add" button to add a Storage Account
@@ -37,3 +39,22 @@ on the Routing query field. Press "Save".
 7. Wait a little and verify that the blob has now telemetry stored.
 
 One drawback from using message routing in IoT Hub is that once a rule is matched, the telemetry is removed from the queue and can't be consumed by other applications. There are ways around this but for now let's just disable the route on the Portal.  
+
+## Time Series Insights
+
+Let's create a Time Series Insights , which is a tool that is very much appreciated by Operations teams in manufacturing. This tool behaves very much like a cloud historian, with the added bonus of a very useful UI. It is built on top of Azure Data Explorer, which we will explore (pun intended) further later...
+
+1. On the Portal, search for Time Series Insights
+2. Choose an environment name, your subscription, the resource group we are using and the same location
+3. Press "Next: Event Source"
+4. Give it a name, leave IoT Hub as source type, select your IoT Hub, and use the iothubowner policy name
+5. Choose the consumer group timeseries that we created in LAB 1.
+
+![](images/tsi.png)
+
+1. Once the provisioning is ready, select it and choose "Go to Environment" (top of Portal page)
+2. As a default, TSI will display a graph for the event as a counter (not super useful)
+3. Let's choose a relevant, input. Choose from the dropdown.
+4. Let's add more inputs.  
+5. Choose from the dropdown
+6. Observe the Time Series graphs and heat maps

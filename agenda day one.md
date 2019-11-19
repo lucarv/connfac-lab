@@ -4,7 +4,7 @@
 - Azure IoT Hub Fundamentals  
 - Break  
 - Recap: Lambda Architecture for IoT
-- [LAB 2 (Batch Layer)](https://github.com/lucarv/connfac-lab/tree/master/LAB%202)
+- [LAB 2 (Batch Layer)](https://github.com/lucarv/connfac-lab/tree/master/LAB%202.1)
 - [LAB 3 (Speed Layer / Serving Layer)](https://github.com/lucarv/connfac-lab/tree/master/LAB%203)
 - Building a Lambda Architecture on Azure Cloud
 - [LAB 4](https://github.com/lucarv/connfac-lab/tree/master/LAB%204)
