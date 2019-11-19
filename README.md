@@ -2,7 +2,8 @@
 
 **3 Day Proctor assisted Hands-on LAB**
 
-## Welcome !
+## Welcome
+
 This Cloud Workshop is very hands-on intensive. And wewill be doing it a bit different from most labs.  
 We will be getting our hands dirty from the start. We will make pauses when appropriate to discuss what we have done, but also the whys and hows.  
 
@@ -17,17 +18,4 @@ At the end of these 3 days we will be proudly showing a fully functioning Connec
 
 - A laptop with node.js, Docker and Visual Studio Code.
 - IoT Hub, IoT Edge and Docker extensions for VSC.
-- One Raspberry Pi per group of maximum 3 people.
-
-## Agenda - Day ONE
-
-- [LAB 1](https://github.com/lucarv/connfac-lab/tree/master/LAB%201)
-- Azure IoT Hub Fundamentals  
-- Recap: Lambda Architecture for IoT
-- [LAB 2 (Batch Layer)](https://github.com/lucarv/connfac-lab/tree/master/LAB%202)
-- [LAB 3 (Speed Layer / Serving Layer)](https://github.com/lucarv/connfac-lab/tree/master/LAB%203)
-- Building a Lambda Architecture on Azure Cloud
-- [LAB 4](https://github.com/lucarv/connfac-lab/tree/master/LAB%204)
-- Azure IoT Edge Platform Concepts and Fundaments
-
-
+- One Raspberry Pi per group of maximum 3 people.  
