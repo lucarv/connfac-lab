@@ -59,4 +59,4 @@ Let's create a Time Series Insights , which is a tool that is very much apprecia
 3. Let's choose a relevant, input. Choose from the dropdown.
 4. Let's add more inputs.  
 5. Choose from the dropdown
-6. Observe the Time Series graphs and heat maps. Try writing a simple few queries.  
+6. Observe the Time Series graphs and heat maps.
