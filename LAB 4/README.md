@@ -25,16 +25,16 @@ Connect to the device via ssh (or putty if you are on a Windows PC).
 
 ### Add the Microsoft Repository for Edge SW  
 
-Select Your HW:  
+_Select Your HW:_  
 ```  
-Raspberry PI:  
+**Raspberry PI:** 
 curl https://packages.microsoft.com/config/debian/stretch/multiarch/prod.list > ./microsoft-prod.list
 
-Ubuntu:  
+**Ubuntu:**  
 curl https://packages.microsoft.com/config/ubuntu/18.04/multiarch/prod.list > ./microsoft-prod.list  
 ```  
 
-Install:  
+_Install:_  
 ```
 sudo cp ./microsoft-prod.list /etc/apt/sources.list.d/
 curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > microsoft.gpg
