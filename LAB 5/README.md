@@ -74,3 +74,5 @@ and push it to the Edge Module.
 ## View generated data
 
 You can view the status of your IoT Edge device using the Azure IoT Hub Devices section of the Visual Studio Code explorer. Expand the details of your device to see a list of deployed and running modules.
+
+[NEXT LAB](https://github.com/lucarv/connfac-lab/tree/master/LAB%206)
