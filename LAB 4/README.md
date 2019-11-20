@@ -25,6 +25,7 @@ Connect to the device via ssh (or putty if you are on a Windows PC).
 
 ### Add the Microsoft Repository for Edge SW  
 
+Select Your HW:  
 ```  
 Raspberry PI:  
 curl https://packages.microsoft.com/config/debian/stretch/multiarch/prod.list > ./microsoft-prod.list
@@ -33,6 +34,7 @@ Ubuntu:
 curl https://packages.microsoft.com/config/ubuntu/18.04/multiarch/prod.list > ./microsoft-prod.list  
 ```  
 
+Install:  
 ```
 sudo cp ./microsoft-prod.list /etc/apt/sources.list.d/
 curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > microsoft.gpg
@@ -79,7 +81,6 @@ To deploy your first module from the Azure Marketplace, use the following steps:
 6. Select your device, check that the modules were deployed correctly
 
 ![](images/manifestready.png )
-
 
 ### View generated data
 
