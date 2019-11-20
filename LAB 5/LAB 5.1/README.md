@@ -1,7 +1,5 @@
 # LAB 5.1: DEVELOP YOUR OWN MODULE
 
-(or copy the code from [here](https://github.com/lucarv/formatterModule/blob/master/app.js))
-
 ## Create a Private Registry
 
 As we start authoring modules, we need to store the images to a Registry. You can use any docker compatible registry, so let's create a private one on Azure.  
@@ -91,6 +89,8 @@ Now you need to build the solution as a container image and push it to your cont
 5. Choose build
 6. Name your module as _MYACR_.azurecr.io/formatter:0.0.1
 7. Push Your module to your registry. The easiest way is to use the Docker extension for visual code. Just open the extension, expand your image, choose the right version, right click and select 'Push'
+
+(or copy the code from [here](https://github.com/lucarv/formatterModule/blob/master/app.js))
 
 Done! You can now go back to [LAB 5](https://github.com/lucarv/connfac-lab/tree/master/LAB%205)
 
