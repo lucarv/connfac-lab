@@ -91,7 +91,7 @@ Open the command prompt on the computer running your simulated device again. Con
 
 You can also verify the D2C messages using the device explorer or visual code.
 
-## Create a Stream Analytics job
+## Part 3. Create a Stream Analytics job
 
 Instead of sending every single reading from the device, let's save connectivity costs by only send averages. We will also want to repeat the behaviour of the previous lab, where we will reset the device once the temperature reach a threshold. 
 First we need to create a container to store the jobs that will be sent to the edge. 
