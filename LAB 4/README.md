@@ -19,7 +19,7 @@ In this lab we will be preferrably deploying an edge device on:
 - OPTION 1: a Raspberry Pi 3 running stretch. IoT Edge is not supported on Buster
 - OPTION 2: a VM on Azure unning Linux. If you follow this, please go to the Azure Portal search for Ubuntu 18.04. Deploy a new VM, making sure you select a smaller HW profile, and login with username and password, as shown below, then press **Review + Create**  
 
-![](images/vm.png )
+![](images/vmub.png)
 
 Connect to the device via ssh (or putty if you are on a Windows PC).  
 As we have learnt, Azure Edge is a SW component depolyed on COTS HW running Windows or Linux (which You will use).  We also learned that Edge runs a microservices architecture on docker, so we will first install that on the device.  
