@@ -22,7 +22,6 @@ In this lab we will be preferrably deploying an edge device on:
 ![](images/vmub.png)
 
 Connect to the device via ssh (or putty if you are on a Windows PC).  
-As we have learnt, Azure Edge is a SW component depolyed on COTS HW running Windows or Linux (which You will use).  We also learned that Edge runs a microservices architecture on docker, so we will first install that on the device.  
 
 ### Add the Microsoft Repository for Edge SW  
 
