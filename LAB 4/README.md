@@ -15,9 +15,10 @@ First we will pre-provision an EDGE device identity in IoT Hub (look for IoT Edg
 ## Prepare the device  
 
 In this lab we will be preferrably deploying an edge device on:  
-OPTION 1: a Raspberry Pi 3.  
-OPTION 2: a VM or laptop running Linux. Follow the [linux](https://docs.microsoft.com/en-us/azure/iot-edge/how-to-install-iot-edge-linux) tutorial 
-OPTION 3: a VM or laptop running Windows. Follow the [windows](https://docs.microsoft.com/en-us/azure/iot-edge/how-to-install-iot-edge-windows)  
+
+- OPTION 1: a Raspberry Pi 3.  
+- OPTION 2: a VM or laptop running Linux. Follow the [linux](https://docs.microsoft.com/en-us/azure/iot-edge/how-to-install-iot-edge-linux) tutorial  
+- OPTION 3: a VM or laptop running Windows. Follow the [windows](https://docs.microsoft.com/en-us/azure/iot-edge/how-to-install-iot-edge-windows)  
 
 Contionue below if you are using a reaspberry pi.
 Otherwise move to Part 2 on this tutorial.
@@ -78,7 +79,8 @@ Once you have done it, reboot the security daemon by running the following comma
 You can verify that the Edge Device is ready to be further configured by means of a deployment manifest. A manifest is a json document containing modules and pipelines.
 Modules can be downloaded from any docker repository, and some of them are available at the Edge Market place on the Azure Portal. We will fetch a module that will simulate a device sending telemetry.  
 
-To deploy your first module from the Azure Marketplace, use the following steps:
+To deploy your first module from the Azure Marketplace, use the following steps:  
+
 1. In the Azure portal, enter Simulated Temperature Sensor into the search and open the Marketplace result.
 2. Choose an IoT Edge device to receive this module. On the Target Devices for IoT Edge Module page, provide the appropriate info. Select "Create". This will take you back to the device pane on the portal, it will show the module in the list of deployment modules.
 3. We will only deploy one module now, so press "Next" to configure the pipeline. 
@@ -90,6 +92,7 @@ To deploy your first module from the Azure Marketplace, use the following steps:
 
 
 ### View generated data
+
 In this quickstart, you created a new IoT Edge device and installed the IoT Edge runtime on it. Then, you used the Azure portal to push an IoT Edge module to run on the device without having to make changes to the device itself. In this case, the module that you pushed creates environmental data that you can use for the tutorials. 
 
 Open the command prompt on the computer running your simulated device again. Confirm that the module deployed from the cloud is running on your IoT Edge device. View the messages being sent from the tempSensor module to the cloud:
@@ -98,6 +101,7 @@ Open the command prompt on the computer running your simulated device again. Con
 You can also verify the D2C messages using the device explorer or visual code.
 
 ## Create a Stream Analytics job
+
 Instead of sending every single reading from the device, let's save connectivity costs by only send averages. We will also want to repeat the behaviour of the previous lab, where we will reset the device once the temperature reach a threshold. 
 First we need to create a container to store the jobs that will be sent to the edge. 
 
