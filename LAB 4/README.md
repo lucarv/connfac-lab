@@ -24,41 +24,34 @@ In this lab we will be preferrably deploying an edge device on:
 Connect to the device via ssh (or putty if you are on a Windows PC).  
 As we have learnt, Azure Edge is a SW component depolyed on COTS HW running Windows or Linux (which You will use).  We also learned that Edge runs a microservices architecture on docker, so we will first install that on the device.  
 
-### Download and install the moby-engine
+### Add the Microsoft Repository for Edge SW  
 
 ```  
-curl -L https://aka.ms/moby-engine-armhf-latest -o moby_engine.deb && sudo dpkg -i ./moby_engine.deb
-```  
+Raspberry PI:  
+curl https://packages.microsoft.com/config/debian/stretch/multiarch/prod.list > ./microsoft-prod.list
 
-### Download and install the moby-cli
+Ubuntu:  
+curl https://packages.microsoft.com/config/ubuntu/18.04/multiarch/prod.list > ./microsoft-prod.list  
+```  
 
 ```
-curl -L https://aka.ms/moby-cli-armhf-latest -o moby_cli.deb && sudo dpkg -i ./moby_cli.deb
+sudo cp ./microsoft-prod.list /etc/apt/sources.list.d/
+curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > microsoft.gpg
+sudo cp ./microsoft.gpg /etc/apt/trusted.gpg.d/
+sudo apt-get update
 ```
 
-### Run fix  
+### Download and install the container engine
 
 ```
-sudo apt install -f
-```  
-
-### Download and install the standard libiothsm implementation
-
-```  
-curl -L https://aka.ms/libiothsm-std-linux-armhf-latest -o libiothsm-std.deb && sudo dpkg -i ./libiothsm-std.deb
-```  
+sudo apt-get install moby-engine moby-cli -y
+```
 
 ### Download and install the IoT Edge Security Daemon
 
 ```
-curl -L https://aka.ms/iotedged-linux-armhf-latest -o iotedge.deb && sudo dpkg -i ./iotedge.deb
+sudo apt-get install iotedge
 ```
-
-### Run fix
-
-```
-sudo apt install -f  
-``` 
 
 ## Manage the device on Azure  
 
