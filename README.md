@@ -22,4 +22,5 @@ At the end of these 3 days we will be proudly showing a fully functioning Connec
 - Access to an Azure and a Power BI Subscription
 - WiFi with access to the public internet.
 
-[AGENDA](https://github.com/lucarv/connfac-lab/blob/master/agenda%20day%20one.md)  
+[AGENDA DAY ONE](https://github.com/lucarv/connfac-lab/blob/master/agenda%20day%20one.md)  
+[AGENDA DAY TWO](https://github.com/lucarv/connfac-lab/blob/master/agenda%20day%20two.md)  
