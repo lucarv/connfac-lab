@@ -16,12 +16,10 @@ First we will pre-provision an EDGE device identity in IoT Hub (look for IoT Edg
 
 In this lab we will be preferrably deploying an edge device on:  
 
-- OPTION 1: a Raspberry Pi 3.  
-- OPTION 2: a VM or laptop running Linux. Follow the [linux](https://docs.microsoft.com/en-us/azure/iot-edge/how-to-install-iot-edge-linux) tutorial  
-- OPTION 3: a VM or laptop running Windows. Follow the [windows](https://docs.microsoft.com/en-us/azure/iot-edge/how-to-install-iot-edge-windows)  
+- OPTION 1: a Raspberry Pi 3 running stretch. IoT Edge is not supported on Buster
+- OPTION 2: a VM on Azure unning Linux. If you follow this, please go to the Azure Portal search for Ubuntu 18.04. Deploy a new VM, making sure you select a smaller HW profile, and login with username and password, as shown below, then press **Review + Create**  
 
-Contionue below if you are using a reaspberry pi.
-Otherwise move to Part 2 on this tutorial.
+![](images/vm.png )
 
 Connect to the device via ssh (or putty if you are on a Windows PC).  
 As we have learnt, Azure Edge is a SW component depolyed on COTS HW running Windows or Linux (which You will use).  We also learned that Edge runs a microservices architecture on docker, so we will first install that on the device.  
