@@ -32,7 +32,7 @@ Let's do that first!
         "Id": "ns=1;s=freemem",
         "OpcSamplingInterval": 1000,
         "OpcPublishingInterval": 5000,
-        "DisplayName": "Free Memoery
+        "DisplayName": "Free Memory"
       },
       {
         "Id": "ns=1;s=uptime",
