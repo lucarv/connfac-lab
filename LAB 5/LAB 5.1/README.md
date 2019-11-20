@@ -1,4 +1,4 @@
-# DEVELOP YOUR OWN MODULE
+# LAB 5.1: DEVELOP YOUR OWN MODULE
 
 (or copy the code from [here](https://github.com/lucarv/formatterModule/blob/master/app.js))
 

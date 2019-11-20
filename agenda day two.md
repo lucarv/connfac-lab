@@ -8,4 +8,6 @@
 - [LAB 2.2 (Speed Layer / Serving Layer)](https://github.com/lucarv/connfac-lab/tree/master/LAB%202.2)
 - Building a Lambda Architecture on Azure Cloud
 - [LAB 3](https://github.com/lucarv/connfac-lab/tree/master/LAB%203)
+- Creating live dashboards
+- [LAB 4](https://github.com/lucarv/connfac-lab/tree/master/LAB%204)
 - Azure IoT Edge Platform Concepts and Fundaments  
