@@ -60,7 +60,7 @@ We are taken into a pane that shows the json document. Inspect it and locate the
 
 ## Invoke a direct method
 
-1. Verify the invocation of a direct method. Select your device in the portal. Verify that the device resets and the temperature starts from 25C again.
+1. Verify the invocation of a direct method. Select your device in the portal. Verify that the device resets and the temperature starts from 20,xxx C again.
  
 ![](images/InvokeReset.png)
 
