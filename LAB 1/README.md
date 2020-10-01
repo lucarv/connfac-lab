@@ -73,7 +73,7 @@ Open your device twin document in the cloud and add tags to your device.
 ```
 "tags": {
     "type": "simulated",
-    "hw": "raspberry pi",
+    "hw": "<your type of hw - _pi_ or _laptop_>",
     "fw": "1.0.0"
 },
 ```

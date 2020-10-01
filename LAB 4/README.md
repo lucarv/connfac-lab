@@ -55,12 +55,13 @@ Each server will have a number of nodes you need to publish to IoT Hub. This is 
 
 ## Create the deployment manifest
 
-Go back to the Portal and add a new module for the opc-ua publisher. Last time we did it we got a module from the Marketplace. This time we will do it manually.
+Go back to the Portal and add a new module for the opc-ua publisher. We can easily do that from the Marketplace.  
+Go to Your device in the Portal an go all the way to Set Modules. Dropdown the 'ADD' menu and choose market place.
+![](images/marketplace.png ) . 
 
-Go to Your device in the Portal an go all the way to Set Modules
-Let's name it **publisher**.
-This module is stored on the microsoft reporitory at mcr.microsoft.com/iotedge/opc-publisher:linux-arm32v7 (if you are on a raspberry pi) or mcr.microsoft.com/iotedge/opc-publisher:latest (ubuntu)
-We need to mount the directory we created before, so in the Container Created Options, enter the following:
+search for OPC Publisher. This will pre-populate the deployment manifest with some default values. We need to change that. Click the module name, then choose Container Create Options. Replace the pre-populated defaults with the JSON below: 
+
+
 ```
 {
   "Hostname": "publisher",
@@ -81,7 +82,7 @@ Add a route so the publisher sends data to the IoT Hub. You should be able to fi
 {
     "routes": {
       <YOUR EXISTING ROUTES>
-      , "opcPubToCloud": "FROM /messages/modules/publisher/* INTO $upstream"
+      , "opcPubToCloud": "FROM /messages/modules/OPCPublisher/* INTO $upstream"
     }
 }
 ```
