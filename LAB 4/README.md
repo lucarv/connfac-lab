@@ -25,26 +25,20 @@ Let's do that first!
 ```
 [
   {
-    "EndpointUrl": "opc.tcp://ekskog.net:4334/UA/HBVUattic",
+    "EndpointUrl": "your OPC UA server address",
     "UseSecurity": false,
     "OpcNodes": [
       {
-        "Id": "ns=1;s=freemem",
+        "Id": "some tag",
         "OpcSamplingInterval": 1000,
         "OpcPublishingInterval": 5000,
-        "DisplayName": "Free Memory"
+        "DisplayName": "Some Tag Friendly Name"
       },
       {
-        "Id": "ns=1;s=uptime",
+        "Id": "another tag",
         "OpcSamplingInterval": 1000,
         "OpcPublishingInterval": 5000,
-        "DisplayName": "Device Uptime"
-      },
-      {
-        "Id": "ns=1;s=load_avg_1m",
-        "OpcSamplingInterval": 1000,
-        "OpcPublishingInterval": 5000,
-        "DisplayName": "CPU Load Average Past Minute"
+        "DisplayName": "Another Tag Friendly Name"
       }
     ]
   }
